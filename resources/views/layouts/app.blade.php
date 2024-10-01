@@ -38,13 +38,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-    <x-sidebar />
-
-    </div>
-  </header>
+  <x-header/>
 
   <main class="main">
 
@@ -87,9 +81,6 @@
                 <div class="swiper-slide">
                   <img src="assets/img/img_h_7.jpg" alt="Image" class="img-fluid">
                 </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_8.jpg" alt="Image" class="img-fluid">
-                </div>
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -100,8 +91,7 @@
               Not every human on this planet can pour out sentences with a beautiful voice.
             </h1>
             <p data-aos="fade-up" style="font-size: 18px; color: #e0507b;"> 
-              Writing becomes an addiction for some people who find it difficult 
-              to pour sentences with a beautiful voice. 
+              Writing becomes an addiction for some people who find it difficult to pour sentences with a beautiful voice.
               By writing, the sentence will become eternal in every stroke of his hand. 
           </p>
             <p class="mt-5" data-aos="fade-up">

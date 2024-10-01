@@ -1,6 +1,6 @@
 <footer id="footer" class="footer light-background">
     <div class="container">
-      <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
+      <div class="flex-md-row justify-content-md-between">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">WriteaStory</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->

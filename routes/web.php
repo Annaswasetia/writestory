@@ -6,10 +6,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('layouts.app');
+
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-route::resource('/karya', App\Http\Controllers\KaryaController::class);
+Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
+
+Route::get('/karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');

@@ -12,8 +12,7 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        $karya = Karya::all();
-        return view('pages.karya.index', compact('karya'));
+        return view('pages.karya.index');
     }
 
     /**
