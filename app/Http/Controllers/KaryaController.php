@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karya;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KaryaController extends Controller
 {
@@ -12,7 +13,8 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        return view('pages.karya.index');
+        $karya = Karya::all();
+        return view('pages.karya.index', compact('karya'));
     }
 
     /**
@@ -21,6 +23,7 @@ class KaryaController extends Controller
     public function create()
     {
         return view('pages.karya.create');
+
     }
 
     /**
@@ -28,7 +31,19 @@ class KaryaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string|max:5000', // Batasi panjang konten jika diperlukan
+            'category' => 'nullable|string|max:255',
+        ]);
+
+        Karya::create([
+            'title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'category' => $request->input('category'),
+        ]);
+
+        return redirect()->route('pages.karya.index')->with('success', 'Karya berhasil dibuat!');
     }
 
     /**

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('welcome');
 
 });
 
@@ -16,3 +16,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::get('/karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
+
+Route::post('/karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
