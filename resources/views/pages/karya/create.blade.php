@@ -68,8 +68,18 @@
         </script>
 
         <div class="form-group mb-4">
-            <label for="category" class="form-label">Kategori Karya</label>
-            <input type="text" class="form-control" id="category" name="category" placeholder="Masukkan kategori (opsional)">
+            <label for="category" class="form-label">Kategori Karya<span class="text-danger">*</span></label>
+            
+            <div class="form-check">
+                <input type="radio" name="category" id="cerpen" value="cerpen" class="form-check-input" />
+                <label for="cerpen" class="form-check-label">Cerpen</label>
+
+            </div>
+            <div class="form-check">
+                <input type="radio" name="category" id="puisi" value="puisi" class="form-check-input" />
+                <label for="puisi" class="form-check-label">Puisi</label>
+
+            </div>
         </div>
 
         <div class="d-flex justify-content-around">
@@ -77,7 +87,9 @@
             style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Publish</button>
             <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
             style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Draft</button>
+
             <a href="{{ route('karya.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
+            
             style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Kembali</a>
         </div>
     </form>

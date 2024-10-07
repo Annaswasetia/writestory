@@ -50,13 +50,21 @@
                 <li class="current">Karya</li>
               </ol>
 
-                <div class="py-4">
+                <div class="py-3">
                     <a href="{{ url('/karya/create') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
                     style="font-size: 20px; color: rgb(117, 190, 117); font-family: 'Georgia', 'Times New Roman', serif;">
                         <i class="bi bi-pencil"></i>
                         Buat Karya
                     </a>
                 </div>
+
+                <div class="py-1">
+                  <a href="{{ url('#') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
+                  style="font-size: 20px; color: rgb(117, 190, 117); font-family: 'Georgia', 'Times New Roman', serif;">
+                      <i class="bi bi-pencil-square"></i>
+                      Draft
+                  </a>
+              </div>
 
             </nav>
           </div>

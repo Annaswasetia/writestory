@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('title');
             $table->longText('content', 5000)->nullable();
-            $table->string('category')->nullable();
+            $table->enum('category', ['cerpen', 'puisi'])->default('cerpen');
             $table->timestamps();
         });
     }
