@@ -6,7 +6,7 @@
     <!-- About Section -->
     <section id="about" class="about section">
 
-        <div class="container">
+        <div class="container" style="margin-top: 110px;">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2" data-aos="fade-up" data-aos-delay="400">
               <div class="swiper init-swiper">
@@ -56,16 +56,13 @@
                 By writing, the sentence will become eternal in every stroke of his hand. 
             </p>
               
-              <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
-                <p class="me-3"> <!-- menambahkan margin kanan -->
-                  <a href="{{ route('login') }}" class="btn btn-get-started">Login</a>
-                </p>
-                <p class="me-3">
-                    <a href="" class="btn btn-get-started">Cerpen</a>
-                </p>
-                <p>
-                    <a href="" class="btn btn-get-started">Puisi</a>
-                </p>
+            <div class="d-flex justify-content-start mt-5" data-aos="fade-up"> <!-- Ubah justify-content-center menjadi justify-content-start -->
+              <p class="me-3"> <!-- Menambahkan margin kanan -->
+                  <a href="{{ route('pages.category.cerpen.index') }}" class="btn btn-get-started">Cerpen</a>
+              </p>
+              <p class="me-3">
+                  <a href="" class="btn btn-get-started">Puisi</a>
+              </p>
             </div>
             
             </div>

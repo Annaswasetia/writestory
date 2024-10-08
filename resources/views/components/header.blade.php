@@ -1,5 +1,8 @@
-<header id="header" class="header d-flex align-items-center sticky-top">
-  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header fixed-top">
+
+  <div class="branding d-flex align-items-cente">
+
+    <div class="container position-relative d-flex align-items-center justify-content-between">
 
     <a href="index.html" class="logo d-flex align-items-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -9,21 +12,29 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{{ route('home') }}" class="active">Home</a></li>
+        <li><a href="{{ route('home') }}">Home</a></li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('karya.index') }}">Karya</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Cerpen</a>
+          <a class="nav-link" href="{{ route('pages.category.cerpen.index') }}" >Cerpen</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="">Puisi</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">Logout</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Profil
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
+            <li><a class="dropdown-item" href="#">Profil Saya</a></li>
+            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+            <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li> <!-- Opsi Logout -->
+          </ul>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
+
+</div>
 </header>

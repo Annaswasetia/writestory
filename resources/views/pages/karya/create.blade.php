@@ -38,7 +38,7 @@
 
     <x-header/>
 
-<div class="container mt-5">
+<div class="container" style="margin-top: 200px;">
     <h1 class="text-center mb-4" style="font-size: 50px; color: rgb(117, 190, 117); font-family: 'Georgia', 'Times New Roman', serif;">
         <i class="bi bi-pencil" style="margin-right: 10px;"></i>Buat Karya Baru
     </h1>
@@ -85,8 +85,6 @@
         <div class="d-flex justify-content-around">
             <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
             style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Publish</button>
-            <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
-            style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Draft</button>
 
             <a href="{{ route('karya.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg" 
             
