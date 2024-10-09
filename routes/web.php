@@ -6,10 +6,13 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 Auth::routes([
-    'register' => false,
     'reset' => false,
     'verify' => false,
 ]);
+
+//Register
+Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
 
 //tampilan awal
@@ -32,3 +35,7 @@ Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'
 
 // Rute untuk menghapus cerpen
 Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'destroy'])->name('cerpen.destroy');
+
+//PUISI
+// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
+Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.category.puisi.index');

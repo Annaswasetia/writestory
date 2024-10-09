@@ -5,11 +5,44 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+
+    // Menampilkan form registrasi
+    public function showRegistrationForm()
+    {
+        return view('auth.register'); // Pastikan view ini ada
+    }
+
+    // Menangani proses registrasi
+    public function register(Request $request)
+    {
+        // Validasi data yang diterima
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // Buat pengguna baru
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password), // Enkripsi password
+        ]);
+
+        return redirect()->route('login')->with('success', 'Akun berhasil dibuat! Silakan login.');
+    }
     /*
     |--------------------------------------------------------------------------
     | Register Controller

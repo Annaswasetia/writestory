@@ -20,14 +20,14 @@
           <a class="nav-link" href="{{ route('pages.category.cerpen.index') }}" >Cerpen</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Puisi</a>
+          <a class="nav-link" href="{{ route('pages.category.puisi.index') }}">Puisi</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profil
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
-            <li><a class="dropdown-item" href="#">Profil Saya</a></li>
+            <li><a class="dropdown-item" href="">Profil Saya</a></li>
             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
             <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li> <!-- Opsi Logout -->
           </ul>
