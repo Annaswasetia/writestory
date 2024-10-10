@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -15,33 +16,22 @@ class RegisterController extends Controller
     // Menampilkan form registrasi
     public function showRegistrationForm()
     {
-        return view('auth.register'); // Pastikan view ini ada
+        return view('auth.register'); // Ganti dengan nama view yang sesuai
     }
 
-    // Menangani proses registrasi
     public function register(Request $request)
     {
-        // Validasi data yang diterima
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
+        // Validasi input
+        $this->validator($request->all())->validate();
 
         // Buat pengguna baru
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password), // Enkripsi password
-        ]);
+        $user = $this->create($request->all());
 
-        return redirect()->route('login')->with('success', 'Akun berhasil dibuat! Silakan login.');
+        // Login otomatis setelah registrasi
+        Auth::login($user);
+
+        // Redirect ke halaman profil atau halaman yang sesuai
+        return redirect()->route('profile')->with('success', 'Registration successful!');
     }
     /*
     |--------------------------------------------------------------------------
@@ -86,6 +76,10 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
+        Auth::login($user); // Login otomatis setelah registrasi
+
+        return redirect()->route('profil'); // Ganti dengan rute yang sesuai
     }
 
     /**
@@ -100,6 +94,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => 'user', // Semua pengguna baru diberi role user
         ]);
     }
 }

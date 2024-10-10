@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('puisi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->string('title'); // Judul puisi
             $table->longText('content', 5000)->nullable(); // Konten puisi
             $table->enum('category', ['cerpen', 'puisi'])->default('puisi'); // Kategori

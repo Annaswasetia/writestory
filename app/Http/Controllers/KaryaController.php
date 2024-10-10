@@ -41,9 +41,10 @@ class KaryaController extends Controller
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'category' => $request->input('category'),
+            'user_id' => Auth::id(), // Menyimpan ID pengguna yang sedang login
         ]);
 
-        return redirect()->route('pages.karya.index')->with('success', 'Karya berhasil dibuat!');
+        return redirect()->route('pages.category.cerpen.index')->with('success', 'Karya berhasil dibuat!');
     }
 
     /**

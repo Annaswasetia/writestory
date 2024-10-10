@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('karya', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->longText('content', 5000)->nullable();
             $table->enum('category', ['cerpen', 'puisi'])->default('cerpen');

@@ -2,7 +2,15 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Middleware\AdminMiddleware;
+
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin', function () {
+        return redirect('/profil'); // Arahkan admin ke halaman profil
+    });
+
+    // Tambahkan rute lain untuk admin jika diperlukan
+});
 
 
 Auth::routes([
@@ -10,21 +18,32 @@ Auth::routes([
     'verify' => false,
 ]);
 
+//Login
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
 //Register
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
+Route::get('/profil/edit', [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit.profile')->middleware('auth');
+
+Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
+    Route::post('karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
+
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+
+});
 
 //tampilan awal
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//KARYA
-Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
-Route::get('/karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
-
-Route::post('/karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
 //CERPEN
 // Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)

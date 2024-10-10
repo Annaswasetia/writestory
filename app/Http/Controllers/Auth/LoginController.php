@@ -12,29 +12,27 @@ class LoginController extends Controller
 
         // Tampilkan form login
         public function showLoginForm()
-        {
-            return view('auth.login'); // Mengarahkan ke view login
-        }
+    {
+        return view('auth.login'); // Ganti dengan nama view yang sesuai
+    }
 
-        // Proses login
     public function login(Request $request)
     {
-        // Validasi input
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $credentials = $request->only('email', 'password');
 
-        // Cek kredensial
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Login berhasil
-            return redirect()->intended('home'); // Ganti 'home' dengan rute tujuan setelah login
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('profil'); // Ganti dengan rute yang sesuai
         }
 
-        // Jika login gagal
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email atau password salah.',
         ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home'); // Ganti dengan rute yang sesuai
     }
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +52,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.

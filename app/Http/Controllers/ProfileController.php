@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function show()
-    {
-        // Ambil data user yang sedang login
-        $user = Auth::user();
-
-        // Kirim data user ke view profil
-        return view('pages.profile', compact('user'));
-    }
+     // Method untuk menampilkan halaman profil
+     public function index()
+     {
+         // Mendapatkan informasi pengguna yang sedang login
+         $user = Auth::user(); 
+         
+         // Mengarahkan ke tampilan pages/profil/index
+         return view('pages.profile.index', compact('user')); 
+     }
 }

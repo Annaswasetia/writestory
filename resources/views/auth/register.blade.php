@@ -49,8 +49,11 @@
 
                             <h3 class="mb-5">Sign up</h3>
 
+                            <form action="{{ route('register') }}" method="POST">
+                                @csrf
+
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="name" id="name" class="form-control form-control-lg"
+                                <input type="name" name="name" id="name" class="form-control form-control-lg"
                                     placeholder="Name" />
                             </div>
 
@@ -61,7 +64,7 @@
                             @enderror
 
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="email" class="form-control form-control-lg"
+                                <input type="email" name="email" id="email" class="form-control form-control-lg"
                                     placeholder="E-Mail" />
                             </div>
 
@@ -72,7 +75,7 @@
                             @enderror
 
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="password" id="password" class="form-control form-control-lg"
+                                <input type="password" name="password" id="password" class="form-control form-control-lg"
                                     placeholder="Password" />
                             </div>
 
@@ -82,16 +85,15 @@
                                 </span>
                             @enderror
 
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-start mb-4">
-                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                                <label class="form-check-label ms-2" for="form1Example3"> Remember password </label>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-lg"
+                                    placeholder="Confirm Password" />
                             </div>
-
 
                             <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg"
                                 style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Sign-Up</button>
 
+                            </form>
 
                         </div>
                     </div>

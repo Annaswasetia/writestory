@@ -46,11 +46,13 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
+                        <form action="{{ route('login')}}" method="POST">
+                            @csrf
 
                             <h3 class="mb-5">Sign in</h3>
 
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="email" id="email" class="form-control form-control-lg"
+                                <input type="email" name="email" id="email" class="form-control form-control-lg"
                                     placeholder="E-Mail" />
                             </div>
 
@@ -61,7 +63,7 @@
                             @enderror
 
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="password" id="password" class="form-control form-control-lg"
+                                <input type="password" name="password" id="password" class="form-control form-control-lg"
                                     placeholder="Password" />
                             </div>
 
@@ -86,8 +88,9 @@
                                         class="link-danger">Sign Up</a>
                                 </p>
                             </div>
+                            
 
-
+                        </form>
                         </div>
                     </div>
                 </div>
