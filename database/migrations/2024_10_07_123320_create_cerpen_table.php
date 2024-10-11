@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('title'); // Judul cerpen
-            $table->longText('content', 5000)->nullable(); // Konten cerpen
+            $table->longText('content')->nullable(); // Konten cerpen
             $table->enum('category', ['cerpen', 'puisi'])->default('cerpen'); // Kategori
             $table->boolean('is_published')->default(false); // Status publikasi
             $table->timestamps();

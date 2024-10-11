@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Karya;
+use App\Models\Cerpen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,20 +32,38 @@ class KaryaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string|max:5000', // Batasi panjang konten jika diperlukan
-            'category' => 'nullable|string|max:255',
+            'content' => 'required',
+            'category' => 'required',
+            'is_published' => 'required',
         ]);
 
-        Karya::create([
-            'title' => $request->input('title'),
-            'content' => $request->input('content'),
-            'category' => $request->input('category'),
-            'user_id' => Auth::id(), // Menyimpan ID pengguna yang sedang login
-        ]);
+           // Simpan karya ke database
+    $karya = Karya::create([
+        'user_id' => Auth::user()->id, // ID pengguna yang membuat karya
+        'title' => $request->input('title'), // Mengambil data title dari request
+        'content' => $request->input('content'), // Mengambil data content dari request
+        'category' => $request->input('category'), // Mengambil data category dari request
+        'is_published' => $request->has('is_published'), // Menyimpan status publish berdasarkan checkbox
+    ]);
 
-        return redirect()->route('pages.category.cerpen.index')->with('success', 'Karya berhasil dibuat!');
+        // Jika karya dipublikasikan sebagai cerpen
+        if ($karya->is_published) {
+            // Simpan cerpen ke tabel Cerpen
+            Cerpen::create([
+                'user_id' => $karya->user_id,
+                'title' => $karya->title,
+                'content' => $karya->content,
+                'category' => $karya->category,
+                'is_published' => true,
+            ]);
+
+        return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
+
+        }
+        
     }
 
     /**
@@ -52,7 +71,11 @@ class KaryaController extends Controller
      */
     public function show(string $id)
     {
-        //
+            // Mengambil cerpen berdasarkan ID
+        $cerpen = Cerpen::findOrFail($id);
+
+        // Mengirimkan data cerpen ke view 'cerpen.show'
+        return view('cerpen.show', compact('cerpen'));
     }
 
     /**

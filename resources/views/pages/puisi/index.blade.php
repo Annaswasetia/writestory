@@ -4,7 +4,7 @@
     <div class="container" style="margin-top: 110px;">
         <h1>Daftar Puisi</h1>
 
-        <a href="{{ route('pages.category.puisi.index') }}" class="btn btn-get-started">Puisi</a>
+        <a href="{{ route('pages.puisi.index') }}" class="btn btn-get-started">Puisi</a>
 
         <div class="row">
             @foreach ($puisi as $puisi)

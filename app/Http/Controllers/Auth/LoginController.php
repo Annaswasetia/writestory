@@ -20,8 +20,11 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('profil'); // Ganti dengan rute yang sesuai
+        // Cek apakah pengguna ingin diingat
+        $remember = $request->has('remember');
+
+        if (Auth::attempt($credentials, $remember)) {
+            return redirect()->intended('profile'); // Ganti dengan rute yang sesuai
         }
 
         return back()->withErrors([
@@ -52,7 +55,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.

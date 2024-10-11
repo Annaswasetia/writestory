@@ -17,10 +17,10 @@
                         <a class="nav-link" href="{{ route('karya.index') }}">Karya</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('pages.category.cerpen.index') }}">Cerpen</a>
+                        <a class="nav-link" href="{{ route('pages.cerpen.index') }}">Cerpen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('pages.category.puisi.index') }}">Puisi</a>
+                        <a class="nav-link" href="{{ route('pages.puisi.index') }}">Puisi</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" role="button"
@@ -30,7 +30,12 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
                             <li><a class="dropdown-item" href="{{ route('profile') }}">Profil Saya</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                            <li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            </li>
                             <!-- Opsi Logout -->
                         </ul>
                 </ul>

@@ -11,6 +11,6 @@ class PuisiController extends Controller
     {
          // Mengambil semua cerpen yang dipublikasikan
          $puisi = Puisi::where('is_published', true)->get(); // Hanya mengambil puisi yang dipublikasikan
-         return view('pages.category.puisi.index', compact('puisi')); // Mengirim data ke view
+         return view('pages.puisi.index', compact('puisi')); // Mengirim data ke view
     }
 }

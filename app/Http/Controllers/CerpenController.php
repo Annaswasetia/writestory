@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Cerpen;
+use App\Models\Karya;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CerpenController extends Controller
 {
@@ -13,8 +16,8 @@ class CerpenController extends Controller
     public function index()
     {
          // Mengambil semua cerpen yang dipublikasikan
-         $cerpen = Cerpen::where('is_published', true)->get(); // Hanya mengambil cerpen yang dipublikasikan
-         return view('pages.category.cerpen.index', compact('cerpen')); // Mengirim data ke view
+         $cerpen = Karya::where('is_published', true)->get();
+         return view('pages.cerpen.index', compact('cerpen'));
     }
 
     /**
@@ -30,16 +33,40 @@ class CerpenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // Validasi dan simpan karya
+         $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'category' => 'required',
+            'is_published' => 'required',
+            // field lain jika diperlukan
+        ]);
+
+               // Simpan cerpen ke database
+               $cerpen = Cerpen::create([
+                'user_id' => Auth::user()->id, // ID pengguna yang membuat cerpen
+                'title' => $request->input('title'), // Mengambil data title dari request
+                'content' => $request->input('content'), // Mengambil data content dari request
+                'category' => $request->input('category'), // Mengambil data category dari request
+                'is_published' => true, // Simpan sebagai dipublikasikan
+            ]);
+
+        // Redirect ke halaman daftar cerpen
+        return redirect()->route('cerpen.index')->with('success', 'Cerpen berhasil disimpan!');
     }
+    
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
-    }
+            // Mengambil cerpen berdasarkan ID
+        $cerpen = Cerpen::findOrFail($id);
+
+        // Mengirimkan data cerpen ke view 'cerpen.show'
+        return view('pages.cerpen.show', compact('cerpen'));
+        }
 
     /**
      * Show the form for editing the specified resource.

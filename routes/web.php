@@ -21,7 +21,7 @@ Auth::routes([
 //Login
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
-Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 //Register
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
@@ -31,7 +31,7 @@ Route::get('/profil/edit', [App\Http\Controllers\ProfileController::class, 'edit
 
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'admin'], function () {
     Route::get('karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
     Route::post('karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
@@ -42,19 +42,19 @@ Route::group(['middleware' => 'auth'], function () {
 //tampilan awal
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::post('/cerpen', [App\Http\Controllers\CerpenController::class, 'store'])->middleware('auth')->name('cerpen.store');
 
 
 //CERPEN
 // Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
-Route::get('/cerpen', [App\Http\Controllers\CerpenController::class, 'index'])->name('pages.category.cerpen.index');
+Route::get('/cerpen', [App\Http\Controllers\CerpenController::class, 'index'])->name('pages.cerpen.index');
 
 // Rute untuk halaman detail cerpen
-Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('cerpen.show');
+Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('pages.cerpen.show');
 
 // Rute untuk menghapus cerpen
 Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'destroy'])->name('cerpen.destroy');
 
 //PUISI
 // Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
-Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.category.puisi.index');
+Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.puisi.index');

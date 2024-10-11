@@ -60,10 +60,10 @@
                         <div class="d-flex justify-content-start mt-5" data-aos="fade-up">
                             <!-- Ubah justify-content-center menjadi justify-content-start -->
                             <p class="me-3"> <!-- Menambahkan margin kanan -->
-                                <a href="{{ route('pages.category.cerpen.index') }}" class="btn btn-get-started">Cerpen</a>
+                                <a href="{{ route('pages.cerpen.index') }}" class="btn btn-get-started">Cerpen</a>
                             </p>
                             <p class="me-3">
-                                <a href="{{ route('pages.category.puisi.index') }}" class="btn btn-get-started">Puisi</a>
+                                <a href="{{ route('pages.puisi.index') }}" class="btn btn-get-started">Puisi</a>
                             </p>
                         </div>
 
@@ -78,8 +78,12 @@
             <section id="blog-posts" class="blog-posts section">
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
-                    <p>Recent Posts</p>
-                    <h2>Blog Posts</h2>
+                    <p style="font-size: 40px; font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #44ff33; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); margin: 0; padding: 10px 0;">
+                        Karya Sastra
+                    </p>
+                    <h2 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; ">
+                        Posting Karya
+                    </h2>
                 </div><!-- End Section Title -->
                 <div class="container">
 

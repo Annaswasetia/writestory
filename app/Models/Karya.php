@@ -15,6 +15,7 @@ class Karya extends Model
         'title',
         'content',
         'category',
+        'is_published',
     ];
 
     //relasi dengan user
