@@ -23,21 +23,22 @@
 
         <div class="form-group mb-4">
             <label for="content" class="form-label">Konten Karya <span class="text-danger">*</span></label>
-            <textarea id="content" name="content" required placeholder="Masukkan konten karya" value="{{ old('content') }}"
-                class="form-control @error('content') is-invalid @enderror" style="resize: none; overflow: hidden;"></textarea>
-            
+            <textarea id="content" name="content" required placeholder="Masukkan konten karya"
+                class="form-control @error('content') is-invalid @enderror"
+                style="resize: none; min-height: 100px; max-height: 300px; overflow-y: auto;"></textarea>
+        
             @error('content') 
                 <div class="invalid-feedback d-block">{{ $message }}</div>
             @enderror
         </div>
-
+        
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const contentArea = document.getElementById('content');
-
+        
                 contentArea.addEventListener('input', function() {
-                    this.style.height = 'auto'; // Reset height
-                    this.style.height = this.scrollHeight + 'px'; // Adjust height based on content
+                    this.style.height = 'auto'; // Reset tinggi
+                    this.style.height = (this.scrollHeight) + 'px'; // Sesuaikan tinggi berdasarkan konten
                 });
             });
         </script>

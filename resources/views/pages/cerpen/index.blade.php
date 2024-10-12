@@ -18,7 +18,8 @@
             @endif
             @foreach ($cerpen as $item)
                 <!-- Loop through each cerpen item -->
-                <div class="col-md-6 col-lg-4 mb-4">
+                <!-- Menggunakan col-12 untuk membuat card selebar kontainer -->
+                <div class="col-12 mb-4">
                     <div class="card shadow-sm h-100">
                         <div class="card-body d-flex flex-column">
                             <!-- Title -->
@@ -34,11 +35,12 @@
                             </p>
 
                             <!-- Content Snippet -->
-                            <p class="card-text text-secondary">{{ Str::limit($item->content, 100, '...') }}</p>
+                            <p class="card-text text-secondary">{{ Str::limit($item->content, 300, '...') }}</p>
 
-                            <!-- Read More Button -->
+                            <!-- Read More Button tanpa border dan teks di sebelah kiri -->
                             <a href="{{ route('pages.cerpen.show', $item->id) }}"
-                                class="mt-auto btn btn-outline-primary btn-sm">Read More »</a>
+                               class="mt-auto text-primary"
+                               style="text-decoration: none; font-weight: bold;">Read More »</a>
                         </div>
                     </div>
                 </div>

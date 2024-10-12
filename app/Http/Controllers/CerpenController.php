@@ -15,9 +15,12 @@ class CerpenController extends Controller
      */
     public function index()
     {
-         // Mengambil semua cerpen yang dipublikasikan
-         $cerpen = Karya::where('is_published', true)->get();
-         return view('pages.cerpen.index', compact('cerpen'));
+            // Mengambil semua cerpen yang dipublikasikan dan mengurutkannya dari yang terbaru
+        $cerpen = Karya::where('category', 'cerpen')
+        ->where('is_published', true)
+        ->orderBy('created_at', 'desc') // Mengurutkan berdasarkan waktu pembuatan (terbaru di awal)
+        ->get();
+        return view('pages.cerpen.index', compact('cerpen'));
     }
 
     /**
@@ -49,7 +52,7 @@ class CerpenController extends Controller
                 'content' => $request->input('content'), // Mengambil data content dari request
                 'category' => $request->input('category'), // Mengambil data category dari request
                 'is_published' => true, // Simpan sebagai dipublikasikan
-            ]);
+        ]);
 
         // Redirect ke halaman daftar cerpen
         return redirect()->route('cerpen.index')->with('success', 'Cerpen berhasil disimpan!');
@@ -66,7 +69,7 @@ class CerpenController extends Controller
 
         // Mengirimkan data cerpen ke view 'cerpen.show'
         return view('pages.cerpen.show', compact('cerpen'));
-        }
+    }
 
     /**
      * Show the form for editing the specified resource.

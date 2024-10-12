@@ -58,3 +58,9 @@ Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'de
 //PUISI
 // Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
 Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.puisi.index');
+
+// Rute untuk halaman detail cerpen
+Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show');
+
+// Rute untuk menghapus cerpen
+Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');
