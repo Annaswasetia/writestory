@@ -64,13 +64,13 @@ class KaryaController extends Controller
                  // Redirect ke halaman index cerpen
                 return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
         } elseif ($karya->category === 'puisi') {
-            // Simpan puisi ke tabel Puisi (atau sistem lain jika tidak menggunakan DB)
+            // Simpan puisi ke tabel Puisi
             Puisi::create([
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
                 'content' => $karya->content,
                 'category' => $karya->category,
-                'is_published' => true, // atau atur sesuai dengan logika publikasi
+                'is_published' => true,
             ]);
                 // Redirect ke halaman index puisi
                  return redirect()->route('pages.puisi.index')->with('success', 'Karya telah disimpan sebagai puisi.');

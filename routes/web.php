@@ -12,6 +12,9 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     // Tambahkan rute lain untuk admin jika diperlukan
 });
 
+//tampilan awal
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Auth::routes([
     'reset' => false,
@@ -38,9 +41,6 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 });
-
-//tampilan awal
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/cerpen', [App\Http\Controllers\CerpenController::class, 'store'])->middleware('auth')->name('cerpen.store');
 
