@@ -7,7 +7,8 @@
             <h1 class="display-4 font-weight-bold text-primary"
                 style="font-size: 50px; font-family: 'Georgia', 'Times New Roman', serif;">Karya Sastra</h1>
             <h3 style="font-family: 'Georgia', 'Times New Roman', serif;">Cerpen</h3>
-            <p class="lead text-muted">Nikmati kumpulan cerpen yang telah dipublikasikan oleh para penulis berbakat.</p>
+            <p class="lead text-muted">Hai kamu yang menemukannya. Nikmatilah cerpen ini karena setiap kalimat yang tergores disini mungkin akan membawamu ke dalam kisah yang tak terduga.
+                mengungkap sebuah makna yang tersembunyi di balik setiap kalimat yang terukir. Nikmatilah setiap detiknya</p>
         </div>
 
         <div class="row">

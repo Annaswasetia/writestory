@@ -36,6 +36,7 @@
         </div>
     </div>
 
-    <a href="{{ route('pages.cerpen.index') }}" class="btn btn-secondary" style="background-color: #6c757d; color: white; font-size: 1rem; padding: 10px 20px; border-radius: 8px;">Kembali</a>
+    <a href="{{ route('pages.cerpen.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-arrow-left"
+    style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Back</a>
 </div>
 @endsection

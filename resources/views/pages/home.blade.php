@@ -46,13 +46,23 @@
                     </div>
                 </div>
                 <div class="col-lg-4 order-lg-1">
-                    <span class="section-subtitle" data-aos="fade-up" style="font-size: 15px; color: rgb(169, 172, 35);">Welcome</span>
-                    <h1 class="mb-4" data-aos="fade-up" style="color: #699b76; font-family: 'Georgia', serif;">
-                        Not every human on this planet can pour out sentences with a beautiful voice.
-                    </h1>
-                    <p data-aos="fade-up" style="font-size: 18px; color: #7c8f81; line-height: 1.6;">
-                        Writing becomes an addiction for some people who find it difficult to pour sentences with a beautiful voice. By writing, the sentence will become eternal in every stroke of his hand.
-                    </p>
+                    <span class="section-subtitle" data-aos="fade-up"
+                            style="font-size: 16px; color: #a9ac23; letter-spacing: 1px; font-style: italic;">Karya
+                            Sastra</span>
+                        <h1 class="mb-4" data-aos="fade-up"
+                            style="color: #699b76; font-size: 20px; font-weight: bold; line-height: 1.5;">
+                            Ada begitu banyak insan di dunia ini, namun hanya sedikit yang mampu mendengarkan setiap kata
+                            yang terucap dengan penuh makna.
+                        </h1>
+                        <p data-aos="fade-up"
+                            style="font-size: 15px; color: #7c8f81; line-height: 1.8; font-family: 'Georgia', serif;">
+                            Fatamorgana yang kuciptakan bukanlah untuk mengaburkan, melainkan untuk menghadirkan keindahan
+                            melalui ilusi sastra. Anganku terukir dalam kata-kata, merangkai impian yang membawamu ke dalam
+                            dunia yang lebih indah. Setiap goresan kalimat terselip makna, mengajakmu berkelana dalam
+                            keajaiban dan keindahan yang tak terduga.
+                            <span
+                                style="display: block; font-size: 22px; font-weight: bold; color: #699b76; margin-top: 10px;">🥀🌷</span>
+                        </p>
 
                     <div class="d-flex justify-content-start mt-5" data-aos="fade-up">
                         <p class="me-3">
@@ -78,7 +88,7 @@
                 </h2>
                 <hr style="border-top: 2px solid #0dc225; width: 50%; margin: 20px auto; border-radius: 5px;">
                 <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555; font-size: 18px; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Temukan berbagai karya sastra yang menginspirasi dan menggugah imajinasi. Nikmati setiap cerita dan puisi yang diposting oleh para penulis berbakat.
+                    Temukan berbagai karya sastra yang menginspirasi dan menggugah imajinasi. Nikmati setiap kata dan kalimat yang tergores dan penuh makna ini.
                 </p>
             </div>
             <!-- End Section Title -->
@@ -96,7 +106,8 @@
                                         <small>Ditulis oleh: {{ $cerpen->user->name }} pada {{ $cerpen->created_at->format('d M Y') }}</small>
                                     </p>
                                     <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($cerpen->content, 100) }}</p>
-                                    <a href="{{ route('pages.cerpen.show', $cerpen->id) }}" class="btn btn-success">Baca Cerpen</a>
+                                    <a href="{{ route('pages.cerpen.show', $cerpen->id) }}" class="mt-auto text-primary"
+                                        style="text-decoration: none; font-weight: bold;">Baca Cerpen »</a>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +126,8 @@
                                         <small>Ditulis oleh: {{ $puisi->user->name }} pada {{ $puisi->created_at->format('d M Y') }}</small>
                                     </p>
                                     <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($puisi->content, 100) }}</p>
-                                    <a href="{{ route('pages.puisi.show', $puisi->id) }}" class="btn btn-success">Baca Puisi</a>
+                                    <a href="{{ route('pages.puisi.show', $puisi->id) }}" class="mt-auto text-primary"
+                                        style="text-decoration: none; font-weight: bold;">Baca Puisi »</a>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ Route::middleware([AdminMiddleware::class])->group(function () {
         return redirect('/profil'); // Arahkan admin ke halaman profil
     });
 
-    // Tambahkan rute lain untuk admin jika diperlukan
+
 });
 
 //tampilan awal
@@ -30,8 +30,7 @@ Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logou
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 
-Route::get('/profil/edit', [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit.profile')->middleware('auth');
-
+//Profile
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::group(['middleware' => 'auth', 'admin'], function () {
@@ -40,9 +39,9 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
 
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
-});
+    Route::get('/profil/edit', [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit.profile');
 
-Route::post('/cerpen', [App\Http\Controllers\CerpenController::class, 'store'])->middleware('auth')->name('cerpen.store');
+});
 
 
 //CERPEN

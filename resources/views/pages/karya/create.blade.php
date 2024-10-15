@@ -54,13 +54,13 @@
         <div class="row mb-4">
             <div class="col">
                 <label class="form-label">Kategori Karya <span class="text-danger">*</span></label>
-
+        
                 <!-- Radio Button Cerpen -->
                 <div class="form-check">
                     <input type="radio" name="category" id="cerpen" value="cerpen" class="form-check-input" required>
                     <label for="cerpen" class="form-check-label">Cerpen</label>
                 </div>
-
+        
                 <!-- Radio Button Puisi -->
                 <div class="form-check">
                     <input type="radio" name="category" id="puisi" value="puisi" class="form-check-input" required>
@@ -68,14 +68,17 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Checkbox untuk Publish Karya -->
         <div class="row mb-4">
             <div class="col">
-                <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input">
-                <label for="is_published" class="form-check-label">Publish Karya</label>
+                <div class="form-check">
+                    <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input">
+                    <label for="is_published" class="form-check-label">Publish Karya</label>
+                </div>
             </div>
         </div>
+        
 
         <!-- Tombol Submit dan Kembali -->
         <div class="d-flex justify-content-around">

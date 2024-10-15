@@ -52,7 +52,7 @@ class KaryaController extends Controller
 
         // Jika karya dipublikasikan sebagai cerpen
         if ($karya->category === 'cerpen') {
-            // Simpan cerpen ke tabel Cerpen
+            // Simpan cerpen 
             Cerpen::create([
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
@@ -60,11 +60,10 @@ class KaryaController extends Controller
                 'category' => $karya->category,
                 'is_published' => true,
             ]);
-
-                 // Redirect ke halaman index cerpen
-                return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
+                 // Redirect ke halaman index cerpen 
+                 return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
         } elseif ($karya->category === 'puisi') {
-            // Simpan puisi ke tabel Puisi
+            // Simpan puisi 
             Puisi::create([
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,

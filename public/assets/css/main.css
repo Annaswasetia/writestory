@@ -2380,31 +2380,3 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
-
-.form-group {
-  position: relative;
-}
-
-textarea {
-  resize: none; /* Matikan resize manual */
-  min-height: 100px; /* Tinggi minimal */
-  max-height: 300px; /* Tinggi maksimal */
-  overflow-y: hidden; /* Sembunyikan scroll secara manual */
-  transition: height 0.2s ease; /* Transisi untuk smooth resizing */
-}
-
-label {
-  position: absolute; /* Mengatur posisi label */
-  top: 10px; /* Jarak dari atas */
-  left: 10px; /* Jarak dari kiri */
-  transition: 0.2s; /* Transisi untuk animasi */
-  color: gray; /* Warna label */
-}
-
-/* Mengatur posisi label saat textarea diisi */
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
-  top: -10px; /* Mengangkat label saat textarea diisi */
-  font-size: 12px; /* Ukuran font lebih kecil */
-  color: blue; /* Ganti warna label jika diisi */
-}
