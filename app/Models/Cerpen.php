@@ -16,7 +16,7 @@ class Cerpen extends Model
         'content',
         'category',
         'is_published',
-
+        'karya_id',
     ];
 
 
@@ -24,5 +24,11 @@ class Cerpen extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    // Hubungan dengan model Karya
+    public function karya()
+    {
+        return $this->belongsTo(Karya::class);
     }
 }

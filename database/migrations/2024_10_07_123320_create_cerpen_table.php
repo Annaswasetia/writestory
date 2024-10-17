@@ -19,6 +19,13 @@ return new class extends Migration
             $table->enum('category', ['cerpen', 'puisi'])->default('cerpen'); // Kategori
             $table->boolean('is_published')->default(false); // Status publikasi
             $table->timestamps();
+
+            // Menambahkan kolom karya_id
+            $table->unsignedBigInteger('karya_id');
+
+            // Menambahkan foreign key
+            $table->foreign('karya_id')->references('id')->on('karya')->onDelete('cascade');
+
         });
     }
 

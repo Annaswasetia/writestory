@@ -54,6 +54,7 @@ class KaryaController extends Controller
         if ($karya->category === 'cerpen') {
             // Simpan cerpen 
             Cerpen::create([
+                'karya_id' => $karya->id, // Tambahkan relasi karya_id
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
                 'content' => $karya->content,
@@ -65,6 +66,7 @@ class KaryaController extends Controller
         } elseif ($karya->category === 'puisi') {
             // Simpan puisi 
             Puisi::create([
+                'karya_id' => $karya->id, // Tambahkan relasi karya_id
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
                 'content' => $karya->content,

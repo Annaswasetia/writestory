@@ -97,36 +97,36 @@
                 <!-- Cerpen Terbaru -->
                 <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #333; margin-top: 30px;">Cerpen Terbaru</h3>
                 <div class="row">
-                    @foreach($cerpen as $cerpen)
+                    @foreach($cerpen as $item)
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card shadow-sm border-light" style="border-radius: 15px; transition: transform 0.3s; position: relative;">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">{{ $cerpen->title }}</h5>
+                                    <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">{{ $item->title }}</h5>
                                     <p class="text-muted">
-                                        <small>Ditulis oleh: {{ $cerpen->user->name }} pada {{ $cerpen->created_at->format('d M Y') }}</small>
+                                        <small>Ditulis oleh: {{ $item->user->name }} pada {{ $item->created_at->format('d M Y') }}</small>
                                     </p>
-                                    <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($cerpen->content, 100) }}</p>
-                                    <a href="{{ route('pages.cerpen.show', $cerpen->id) }}" class="mt-auto text-primary"
+                                    <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($item->content, 100) }}</p>
+                                    <a href="{{ route('pages.cerpen.show', $item->id) }}" class="mt-auto text-primary"
                                         style="text-decoration: none; font-weight: bold;">Baca Cerpen »</a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-
+            
                 <!-- Puisi Terbaru -->
                 <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #333; margin-top: 30px;">Puisi Terbaru</h3>
                 <div class="row">
-                    @foreach($puisi as $puisi)
+                    @foreach($puisi as $item)
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card shadow-sm border-light" style="border-radius: 15px; transition: transform 0.3s; position: relative;">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">{{ $puisi->title }}</h5>
+                                    <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">{{ $item->title }}</h5>
                                     <p class="text-muted">
-                                        <small>Ditulis oleh: {{ $puisi->user->name }} pada {{ $puisi->created_at->format('d M Y') }}</small>
+                                        <small>Ditulis oleh: {{ $item->user->name }} pada {{ $item->created_at->format('d M Y') }}</small>
                                     </p>
-                                    <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($puisi->content, 100) }}</p>
-                                    <a href="{{ route('pages.puisi.show', $puisi->id) }}" class="mt-auto text-primary"
+                                    <p class="card-text" style="color: #666; font-style: italic;">{{ Str::limit($item->content, 100) }}</p>
+                                    <a href="{{ route('pages.puisi.show', $item->id) }}" class="mt-auto text-primary"
                                         style="text-decoration: none; font-weight: bold;">Baca Puisi »</a>
                                 </div>
                             </div>
@@ -134,6 +134,7 @@
                     @endforeach
                 </div>
             </div>
+            
         </section>
         <!-- /Blog Posts Section -->
 </main>

@@ -16,11 +16,22 @@ class Karya extends Model
         'content',
         'category',
         'is_published',
+
     ];
 
     //relasi dengan user
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function cerpen()
+    {
+        return $this->hasMany(Cerpen::class);
+    }
+
+    public function puisi()
+    {
+        return $this->hasMany(Puisi::class);
     }
 }

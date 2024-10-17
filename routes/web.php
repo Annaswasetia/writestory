@@ -4,11 +4,38 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 
+//CERPEN
+// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
+Route::get('/cerpen', [App\Http\Controllers\CerpenController::class, 'index'])->name('pages.cerpen.index');
+
+// Rute untuk halaman detail cerpen
+Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('pages.cerpen.show');
+
+//PUISI
+// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
+Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.puisi.index');
+
+// Rute untuk halaman detail cerpen
+Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show');
+
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin', function () {
         return redirect('/profil'); // Arahkan admin ke halaman profil
     });
 
+    // Rute untuk mengedit cerpen (hanya admin yang bisa mengakses)
+    Route::get('/cerpen/edit/{id}', [App\Http\Controllers\CerpenController::class, 'edit'])->name('pages.cerpen.edit');
+    Route::put('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'update'])->name('pages.cerpen.update');
+    
+    // Rute untuk menghapus cerpen (hanya admin yang bisa mengakses)
+    Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'destroy'])->name('cerpen.destroy');
+    
+    // Rute untuk mengedit puisi (hanya admin yang bisa mengakses)
+    Route::get('/puisi/{id}/edit', [App\Http\Controllers\PuisiController::class, 'edit'])->name('pages.puisi.edit');
+    Route::put('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'update'])->name('pages.puisi.update');
+    
+    // Rute untuk menghapus puisi (hanya admin yang bisa mengakses)
+    Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');
 
 });
 
@@ -34,6 +61,7 @@ Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, '
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::group(['middleware' => 'auth', 'admin'], function () {
+    Route::get('pages/home', [App\Http\Controllers\HomeController::class, 'index'])->name('pages.home');
     Route::get('karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
     Route::post('karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
@@ -43,23 +71,3 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
 
 });
 
-
-//CERPEN
-// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
-Route::get('/cerpen', [App\Http\Controllers\CerpenController::class, 'index'])->name('pages.cerpen.index');
-
-// Rute untuk halaman detail cerpen
-Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('pages.cerpen.show');
-
-// Rute untuk menghapus cerpen
-Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'destroy'])->name('cerpen.destroy');
-
-//PUISI
-// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
-Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.puisi.index');
-
-// Rute untuk halaman detail cerpen
-Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show');
-
-// Rute untuk menghapus cerpen
-Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');

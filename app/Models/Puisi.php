@@ -9,13 +9,14 @@ class Puisi extends Model
 {
     use HasFactory;
 
-    protected $table ="puisi";
+    protected $table = "puisi";
     protected $fillable = [
         'user_id',
         'title',
         'content',
         'category',
         'is_published',
+        'karya_id',
 
     ];
 
@@ -24,5 +25,11 @@ class Puisi extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    // Di dalam model Puisi
+    public function karya()
+    {
+        return $this->belongsTo(Karya::class, 'karya_id', 'id'); 
     }
 }

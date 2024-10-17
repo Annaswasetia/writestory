@@ -19,7 +19,6 @@
             @endif
             @foreach ($cerpen as $item)
                 <!-- Loop through each cerpen item -->
-                <!-- Menggunakan col-12 untuk membuat card selebar kontainer -->
                 <div class="col-12 mb-4">
                     <div class="card shadow-sm h-100">
                         <div class="card-body d-flex flex-column">
@@ -47,6 +46,5 @@
                 </div>
             @endforeach
         </div>
-
     </div>
 @endsection
