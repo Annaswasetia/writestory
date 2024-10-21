@@ -15,8 +15,22 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        $karya = Karya::all();
-        return view('pages.karya.index', compact('karya'));
+        // Ambil 3 cerpen terbaru yang dipublikasikan
+        $cerpen = Karya::where('category', 'cerpen')
+                                ->where('is_published', true)
+                                ->orderBy('created_at', 'desc')
+                                ->take(3)
+                                ->get();
+
+        // Ambil 3 puisi terbaru yang dipublikasikan
+        $puisi = Karya::where('category', 'puisi')
+                                ->where('is_published', true)
+                                ->orderBy('created_at', 'desc')
+                                ->take(3)
+                                ->get();
+
+        // Kirim data cerpen dan puisi ke view home
+        return view('pages.karya.index', compact('cerpen', 'puisi'));
     }
 
     /**

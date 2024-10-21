@@ -82,7 +82,7 @@ class CerpenController extends Controller
 
         // Cek apakah user adalah admin
         if (Auth::check() && Auth::user()->role !== 'admin') {
-            return redirect()->route('karya.index')->with('error', 'Anda tidak memiliki akses untuk mengedit cerpen ini.');
+            return redirect()->route('pages.karya.index')->with('error', 'Anda tidak memiliki akses untuk mengedit cerpen ini.');
         }
 
         $karya = Karya::all(); // Pastikan model Karya di-import

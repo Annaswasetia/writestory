@@ -22,6 +22,6 @@ class AdminMiddleware
         }
 
         // Jika bukan admin, redirect ke halaman home atau halaman lain
-        return redirect('pages.home')->with('error', 'You do not have admin access.');
+        return redirect('/pages/home')->with('error', 'You do not have admin access.');
     }
 }
