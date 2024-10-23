@@ -26,7 +26,7 @@
         <div class="text-center mb-5" style="margin-top: 50px;">
             <h1 class="display-4 font-weight-bold text-primary bi-book"
                 style="font-size: 50px; font-family: 'Georgia', 'Times New Roman', serif;">Karya Sastra</h1>
-            <h3 style="font-family: 'Georgia', 'Times New Roman', serif;">Cerpen</h3>
+            <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">Cerpen</h3>
             <p class="lead text-muted">Hai kamu yang menemukannya. Nikmatilah cerpen ini karena setiap kalimat yang tergores disini mungkin akan membawamu ke dalam kisah yang tak terduga.
                 mengungkap sebuah makna yang tersembunyi di balik setiap kalimat yang terukir. Nikmatilah setiap detiknya</p>
         </div>
@@ -40,10 +40,10 @@
             @foreach ($cerpen as $item)
                 <!-- Loop through each cerpen item -->
                 <div class="col-12 mb-4">
-                    <div class="card shadow-sm h-100">
+                    <div class="card shadow-sm h-100" style="border-radius: 15px; overflow: hidden; border: 1px solid #dcdcdc;">
                         <div class="card-body d-flex flex-column">
                             <!-- Title -->
-                            <h4 class="card-title">{{ $item->title }}</h4>
+                            <h4 class="card-title" style="color: rgb(13, 194, 37); font-family: 'Georgia', serif; font-weight: bold;">{{ $item->title }}</h4>
 
                             <!-- Date and Author -->
                             <p class="text-muted small mb-2">

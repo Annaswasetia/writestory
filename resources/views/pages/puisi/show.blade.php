@@ -30,7 +30,7 @@
                 <hr style="border-top: 2px solid #9dd99d;">
 
                 <div
-                    style="font-family: 'Open Sans', sans-serif; line-height: 1.8; text-align: justify; background-color: #f0fff0; padding: 15px; border-radius: 10px;">
+                    style="font-family: 'Open Sans', sans-serif; line-height: 1.8; text-align: center; background-color: #f0fff0; padding: 15px; border-radius: 10px; width: 80%; margin: 0 auto; font-size: 1.2rem;">
                     <p class="text-dark">{!! nl2br(e($puisi->content)) !!}</p>
                 </div>
 
@@ -63,11 +63,11 @@
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus puisi ini?');">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-trash mr-2" 
-                    style="font-size: 20px; color: rgb(255, 0, 0); font-family: 'Georgia', 'Times New Roman', serif;">Delete</button>
+                    <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-trash mr-2"
+                        style="font-size: 20px; color: rgb(255, 0, 0); font-family: 'Georgia', 'Times New Roman', serif;">Delete</button>
                 </form>
             @endif
-            
+
         </div>
 
     </div>
