@@ -61,7 +61,7 @@ class PuisiController extends Controller
 
         // Cek apakah user adalah admin
         if (Auth::check() && Auth::user()->role !== 'admin') {
-            return redirect()->route('karya.index')->with('error', 'Anda tidak memiliki akses untuk mengedit cerpen ini.');
+            return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate puisi ini.');
         }
 
         $karya = Karya::all(); // Pastikan model Karya di-import
@@ -79,7 +79,7 @@ class PuisiController extends Controller
 
         // Pastikan hanya admin yang bisa mengupdate cerpen
         if (Auth::check() && Auth::user()->role !== 'admin') {
-            return redirect()->route('pages.karya.index')->with('error', 'Anda tidak memiliki akses untuk mengubah cerpen ini.');
+            return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate puisi ini.');
         }
 
         // Validasi data input
@@ -119,7 +119,7 @@ class PuisiController extends Controller
     {
         // Pastikan hanya admin yang bisa menghapus
         if (Auth::check() && Auth::user()->role !== 'admin') {
-            return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki akses untuk menghapus puisi.');
+            return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk menghapus cerpen ini.');
         }
 
         // Temukan cerpen berdasarkan ID

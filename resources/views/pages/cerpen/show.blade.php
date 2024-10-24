@@ -34,11 +34,9 @@
         <!-- Badge Status -->
         <div class="mt-3">
             @if ($cerpen->is_published)
-                <span class="badge bg-success"
-                    style="font-size: 1rem; padding: 10px 15px;">Diterbitkan</span>
+                <span class="badge bg-success" style="font-size: 1rem; padding: 10px 15px;">Diterbitkan</span>
             @else
-                <span class="badge bg-warning"
-                    style="font-size: 1rem; padding: 10px 15px;">Draft</span>
+                <span class="badge bg-warning" style="font-size: 1rem; padding: 10px 15px;">Draft</span>
             @endif
         </div>
 
@@ -58,7 +56,7 @@
                 Update
             </a>
 
-            @if (Auth::check() && Auth::user()->role === 'admin')
+            @if (Auth::check())
                 <form action="{{ route('cerpen.destroy', $cerpen->id) }}" method="POST"
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus cerpen ini?');">
                     @csrf

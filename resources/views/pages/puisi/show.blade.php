@@ -58,7 +58,7 @@
                 Update
             </a>
 
-            @if (Auth::check() && Auth::user()->role === 'admin')
+            @if (Auth::check())
                 <form action="{{ route('puisi.destroy', $puisi->id) }}" method="POST"
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus puisi ini?');">
                     @csrf

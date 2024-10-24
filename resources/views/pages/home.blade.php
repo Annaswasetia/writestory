@@ -85,7 +85,7 @@
             </div>
 
                 <!-- About 2 Section -->
-    <!-- <section id="about-2" class="about-2 section light-background">
+    <!--<section id="about-2" class="about-2 section light-background">
 
         <div class="container">
           <div class="content">
