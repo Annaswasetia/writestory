@@ -18,6 +18,10 @@ Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->na
 // Rute untuk halaman detail cerpen
 Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show');
 
+Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('pages.karya.index');
+// Rute untuk halaman detail cerpen
+Route::get('/karya/{id}', [App\Http\Controllers\KaryaController::class, 'show'])->name('pages.karya.show');
+
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin', function () {
         return redirect('/profil'); // Arahkan admin ke halaman profil
@@ -41,9 +45,6 @@ Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logou
 //Register
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
-
-//Profile
-Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::group(['middleware' => 'auth', 'admin'], function () {
     Route::get('pages/home', [App\Http\Controllers\HomeController::class, 'index'])->name('pages.home');

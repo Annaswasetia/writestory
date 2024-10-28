@@ -15,21 +15,11 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        // Ambil 3 cerpen terbaru yang dipublikasikan
-        $cerpen = Karya::where('category', 'cerpen')
-                                ->where('is_published', true)
-                                ->orderBy('created_at', 'desc')
-                                ->take(3)
-                                ->get();
+        // Mengambil semua cerpen dan puisi
+        $cerpen = Cerpen::all(); // Mengambil semua data cerpen
+        $puisi = Puisi::all();   // Mengambil semua data puisi
 
-        // Ambil 3 puisi terbaru yang dipublikasikan
-        $puisi = Karya::where('category', 'puisi')
-                                ->where('is_published', true)
-                                ->orderBy('created_at', 'desc')
-                                ->take(3)
-                                ->get();
-
-        // Kirim data cerpen dan puisi ke view home
+        // Mengembalikan view dengan data cerpen dan puisi
         return view('pages.karya.index', compact('cerpen', 'puisi'));
     }
 
@@ -39,7 +29,6 @@ class KaryaController extends Controller
     public function create()
     {
         return view('pages.karya.create');
-
     }
 
     /**
@@ -47,7 +36,7 @@ class KaryaController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required',
@@ -55,14 +44,14 @@ class KaryaController extends Controller
             'is_published' => 'required',
         ]);
 
-           // Simpan karya ke database
+        // Simpan karya ke database
         $karya = Karya::create([
-        'user_id' => Auth::user()->id, // ID pengguna yang membuat karya
-        'title' => $request->input('title'), // Mengambil data title dari request
-        'content' => $request->input('content'), // Mengambil data content dari request
-        'category' => $request->input('category'), // Mengambil data category dari request
-        'is_published' => $request->has('is_published'), // Menyimpan status publish berdasarkan checkbox
-    ]);
+            'user_id' => Auth::user()->id, // ID pengguna yang membuat karya
+            'title' => $request->input('title'), // Mengambil data title dari request
+            'content' => $request->input('content'), // Mengambil data content dari request
+            'category' => $request->input('category'), // Mengambil data category dari request
+            'is_published' => $request->has('is_published'), // Menyimpan status publish berdasarkan checkbox
+        ]);
 
         // Jika karya dipublikasikan sebagai cerpen
         if ($karya->category === 'cerpen') {
@@ -75,8 +64,8 @@ class KaryaController extends Controller
                 'category' => $karya->category,
                 'is_published' => true,
             ]);
-                 // Redirect ke halaman index cerpen 
-                 return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
+            // Redirect ke halaman index cerpen 
+            return redirect()->route('pages.cerpen.index')->with('success', 'Karya telah dipublikasikan dan cerpen dibuat.');
         } elseif ($karya->category === 'puisi') {
             // Simpan puisi 
             Puisi::create([
@@ -87,32 +76,22 @@ class KaryaController extends Controller
                 'category' => $karya->category,
                 'is_published' => true,
             ]);
-                // Redirect ke halaman index puisi
-                 return redirect()->route('pages.puisi.index')->with('success', 'Karya telah disimpan sebagai puisi.');
-
+            // Redirect ke halaman index puisi
+            return redirect()->route('pages.puisi.index')->with('success', 'Karya telah disimpan sebagai puisi.');
         }
-        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
 {
-    // Coba cari di model Cerpen terlebih dahulu
-    $cerpen = Cerpen::find($id);
+    // Mengambil semua cerpen dan puisi berdasarkan ID karya
+    $cerpen = Cerpen::where('karya_id', $id)->where('category', 'cerpen')->get();
+    $puisi = Puisi::where('karya_id', $id)->where('category', 'puisi')->get();
 
-    if ($cerpen) {
-        // Jika cerpen ditemukan, kirimkan data ke view cerpen.show
-        return view('cerpen.show', compact('cerpen'));
-    }
-
-    // Jika tidak ditemukan di Cerpen, coba cari di model Puisi
-    $puisi = Puisi::findOrFail($id); // Jika tidak ditemukan, langsung fail
-
-    // Jika puisi ditemukan, kirimkan data ke view puisi.show
-    return view('puisi.show', compact('puisi'));
-}
+    return view('pages.karya.show', compact('cerpen', 'puisi'));
+}    
     /**
      * Show the form for editing the specified resource.
      */
