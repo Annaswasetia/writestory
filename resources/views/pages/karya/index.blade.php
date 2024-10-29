@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title light-background" style="padding-top: 120px;">
         <div class="container">
-            <h1>Karya</h1>
+            <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Karya</h1>
             <nav class="breadcrumbs">
                 <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
 
@@ -42,10 +42,10 @@
 
     <section id="blog-posts" class="blog-posts section" style="background-color: #ffffff; padding: 50px 0;">
         <div class="container">
-            <h1>Halaman Karya</h1>
+            <h1 style="font-family: 'Georgia', serif; color: #333; text-align: center; margin-bottom: 40px;">Halaman Karya</h1>
         
             <!-- Menampilkan Cerpen -->
-            <h2>Cerpen</h2>
+            <h2 style="font-family: 'Georgia', serif; color: #4fa94f;">Cerpen</h2>
             @if ($cerpen->count() > 0)
                 <div class="row">
                     @foreach ($cerpen as $item)
@@ -75,8 +75,11 @@
                 <p>Tidak ada cerpen yang tersedia.</p>
             @endif
         
+
+
+            <hr style="border-top: 2px solid #919b91;">
             <!-- Menampilkan Puisi -->
-            <h2>Puisinya</h2>
+            <h2 style="font-family: 'Georgia', serif; color: #4fa94f;">Puisi</h2>
             @if ($puisi->count() > 0)
                 <div class="row">
                     @foreach ($puisi as $item)

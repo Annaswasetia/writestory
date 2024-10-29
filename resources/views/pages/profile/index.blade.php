@@ -17,10 +17,9 @@
                     </div>
 
                     <div class="actions mt-4 text-center">
-                        <h2 style="text-align: center; font-size: 24px; margin-bottom: 20px; color: #333;">Aksi</h2>
+                        <h2 style="text-align: center; font-size: 15px; margin-bottom: 20px; color: #333;">Aksi</h2>
                         <div>
-                            <a href="{{ route('edit.profile') }}" class="btn btn-primary">Edit Profil</a>
-                            <a href="{{ route('logout') }}" class="btn btn-danger"
+                            <a href="{{ route('logout') }}" class="bi bi-box-arrow-right"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title light-background" style="padding-top: 120px;">
         <div class="container">
-            <h1>Cerpen</h1>
+            <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Cerpen</h1>
             <nav class="breadcrumbs">
                 <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
 
