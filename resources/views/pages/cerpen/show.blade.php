@@ -1,7 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 150px;">
+<div class="page-title light-background" style="padding-top: 120px;">
+    <div class="container">
+        <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Cerpen</h1>
+        <nav class="breadcrumbs" style="font-family: 'Open Sans', sans-serif;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
+
+                <li style="margin-right: 8px;">
+                    <a href="{{ route('home') }}" style="text-decoration: none; color: #4fa94f; font-weight: bold;">
+                        Home
+                    </a>
+                </li>
+                <li style="color: #555; font-weight: bold;">
+                    Detail Cerpen
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+    <div class="container" style="margin-top: 70px;">
         <h1 class="card-title"
             style="font-family: 'Palatino', serif; color: #0f0f11; font-size: 2.8rem; text-shadow: 2px 2px 5px rgba(9, 211, 9, 0.5);">
             {{ $cerpen->title }}

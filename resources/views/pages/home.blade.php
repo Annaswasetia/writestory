@@ -101,7 +101,7 @@
                             <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
                                 <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
                                     <div class="img">
-                                        <img src="assets/img/img_v_3.jpg" alt="circle image" class="img-fluid" style="border-radius: 50%; border: 4px solid #699b76;">
+                                        <img src="assets/img/wow.jpeg" alt="circle image" class="img-fluid" style="border-radius: 50%; width: 350px; height: 450px; border: 4px solid #9bb8a2;">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                 <div class="px-3">
                                     <span class="content-subtitle" style="font-size: 15px; color: #7c8f81; line-height: 1.8; font-family: 'Georgia', serif;">Fatamorgana</span>
                                     <h2 class="content-title text-start" style="font-size: 20px; color: #b3b02c; line-height: 1.5; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
-                                        Indah bagaikan rembulan malam, si pemilik nayanika dengan sinarnya yang indah bagaikan arunika.
+                                        Dia si pemilik nayanika dengan sinarnya yang begitu indah bagaikan arunika, juga tak kalah indah bagaikan sinar rembulan. 
                                     </h2>
                                     <p class="lead" style="font-size: 16px; color: #699b76; line-height: 1.6; font-family: 'Georgia', serif;">
                                         Dia hanyalah fatamorgana yang ingin aku jadikan nyata lewat aksara diksi ku.
@@ -121,7 +121,7 @@
                                     </p>
                                     <p>
                                         <a href="{{ route('home') }}" class="btn-get-started" style="background-color: #699b76; color: white; padding: 10px 20px; border-radius: 25px; transition: background-color 0.3s, transform 0.3s;">
-                                            Get Started
+                                            Home Page
                                         </a>
                                     </p>
                                 </div>
@@ -136,21 +136,22 @@
             <section id="blog-posts" class="blog-posts section" style="background-color: #ffffff; padding: 50px 0;">
                 <div class="container text-center" data-aos="fade-up">
                     <p style="font-size: 40px; font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); margin: 0; padding: 10px 0;">
-                        ✨ Karya Sastra ✨
+                        ✦ - Karya Sastra - ✦
                     </p>
-                    <h2 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #333; font-size: 32px; margin-bottom: 20px;">
-                        Posting Karya
-                    </h2>
+                    <h4 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #555">
+                        Cerpen | Puisi
+                    </h4>
                     <hr style="border-top: 2px solid #0dc225; width: 50%; margin: 20px auto; border-radius: 5px;">
                     <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555; font-size: 18px; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Temukan berbagai karya sastra yang menginspirasi dan menggugah imajinasi. Nikmati setiap kata pada kalimat ini, mungkin ada keindahan didalamnya.
+                        Temukan berbagai karya sastra cerpen dan puisi yang menginspirasi dan menggugah imajinasi. Nikmati setiap kata pada kalimat ini, setiap kata yang terukir mungkin saja ada keindahan tersembunyi didalamnya
+                        🥀🍃.
                     </p>
                 </div>
             
                 <!-- Cerpen Terbaru -->
                 @if ($cerpen->count() > 0)
                     <div class="container" style="margin-top: 100px;">
-                        <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #333;">
+                        <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: black">
                             Cerpen Terbaru
                         </h3>
                         <div class="row">
@@ -158,11 +159,11 @@
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="card shadow-sm border-light" style="border-radius: 15px; background-color: #f5f5f5; transition: transform 0.3s; position: relative;">
                                         <div class="card-body">
-                                            <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">
+                                            <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #69697a;">
                                                 {{ $item->title }}
                                             </h5>
                                             <p class="text-muted">
-                                                <small>Ditulis oleh: {{ $item->user->name }} pada {{ $item->created_at->format('d M Y') }}</small>
+                                                <small>Ditulis oleh: {{ $item->user->name }} | pada {{ $item->created_at->format('d M Y') }}</small>
                                             </p>
                                             <p class="card-text" style="color: #666; font-style: italic;">
                                                 {{ Str::limit($item->content, 100) }}
@@ -181,7 +182,7 @@
                 <!-- Puisi Terbaru -->
                 @if ($puisi->count() > 0)
                     <div class="container" style="margin-top: 30px;">
-                        <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #333;">
+                        <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: black">
                             Puisi Terbaru
                         </h3>
                         <div class="row">
@@ -189,11 +190,11 @@
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="card shadow-sm border-light" style="border-radius: 15px; background-color: #f5f5f5; transition: transform 0.3s; position: relative;">
                                         <div class="card-body">
-                                            <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #0f0f11;">
+                                            <h5 class="card-title" style="font-family: 'Palatino', serif; font-weight: bold; color: #69697a;">
                                                 {{ $item->title }}
                                             </h5>
                                             <p class="text-muted">
-                                                <small>Ditulis oleh: {{ $item->user->name }} pada {{ $item->created_at->format('d M Y') }}</small>
+                                                <small>Ditulis oleh: {{ $item->user->name }} | pada {{ $item->created_at->format('d M Y') }}</small>
                                             </p>
                                             <p class="card-text" style="color: #666; font-style: italic;">
                                                 {{ Str::limit($item->content, 100) }}
@@ -209,8 +210,8 @@
                     </div>
                 @endif
             </section>
-            
             <!-- /Blog Posts Section -->
+            
     </main>
 
 @endsection

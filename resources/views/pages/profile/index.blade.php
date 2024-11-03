@@ -3,7 +3,27 @@
 @section('title', 'Profil Saya')
 
 @section('content')
-    <div class="container" style="margin-top: 150px;">
+<div class="page-title light-background" style="padding-top: 120px;">
+    <div class="container">
+        <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Profile</h1>
+        <nav class="breadcrumbs">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
+
+                <li style="margin-right: 8px;">
+                    <a href="{{ route('home') }}" style="text-decoration: none; color: #4fa94f; font-weight: bold;">
+                        Home
+                    </a>
+                </li>
+
+                <li style="color: #555; font-weight: bold;">
+                    Profile
+                </li>
+            </ol>
+
+        </nav>
+    </div>
+</div>
+    <div class="container" style="margin-top: 70px;">
         @if (Auth::check())
             <div class="text-center">
                 <h1 style="font-size: 40px; color: rgb(79, 161, 93); font-weight: bold; font-family: 'Georgia', 'Times New Roman', serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Profil {{ Auth::user()->role === 'admin' ? 'Admin' : 'Author' }}</h1>

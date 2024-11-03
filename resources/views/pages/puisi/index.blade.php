@@ -31,6 +31,8 @@
                 kata yang terukir terkadang menyimpan sebuah pesan yang mendalam dari hati yang belum bisa terucap</p>
         </div>
 
+        <hr style="border-top: 2px solid #13a713;">
+
         <div class="row">
             @if (session('success'))
                 <div class="alert alert-success">

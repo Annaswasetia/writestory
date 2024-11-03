@@ -38,7 +38,7 @@ class CerpenController extends Controller
     public function store(Request $request)
     {
         // Validasi dan simpan karya
-        $validatedData = $request->validate([
+        $validatedData = $request->validate([ // Memvalidasi input untuk memastikan formatnya benar sebelum disimpan.
             'title' => 'required|max:255',
             'content' => 'required',
             'category' => 'required',
@@ -67,8 +67,8 @@ class CerpenController extends Controller
      */
     public function show($id)
     {
-        // Mengambil puisi berdasarkan ID beserta karya terkait
-        $cerpen = Cerpen::where('karya_id', $id)->first();
+        // Mengambil id karya yang terkait dengan id cerpen
+        $cerpen = Cerpen::where('karya_id', $id)->first(); //SELECT * FROM cerpen WHERE karya_id = $id 
 
         return view('pages.cerpen.show', compact('cerpen'));
     }
@@ -85,7 +85,7 @@ class CerpenController extends Controller
             return redirect()->route('pages.cerpen.index')->with('error', 'Anda tidak memiliki izin untuk mengedit cerpen ini.');
         }
 
-        $karya = Karya::all(); // Pastikan model Karya di-import
+        $karya = Karya::all(); 
 
         return view('pages.cerpen.edit', compact('cerpen', 'karya'));
     }
@@ -98,7 +98,7 @@ class CerpenController extends Controller
         // Temukan cerpen berdasarkan ID
         $cerpen = Cerpen::findOrFail($id);
 
-        // Pastikan hanya admin yang bisa mengupdate cerpen
+        // hanya admin yang bisa mengupdate cerpen
         if (Auth::check() && Auth::user()->role !== 'admin') {
             return redirect()->route('pages.cerpen.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate cerpen ini.');
         }
@@ -122,11 +122,10 @@ class CerpenController extends Controller
         // Ambil karya terkait dengan cerpen
         $karya = Karya::find($cerpen->karya_id);
 
-        // Jika karya ditemukan, perbarui informasi yang diperlukan
         if ($karya) {
             // Update field di karya dengan informasi dari cerpen
             $karya->title = $cerpen->title; // Mengupdate judul karya
-            $karya->content = $cerpen->content; // Mengupdate konten karya atau field lain yang relevan
+            $karya->content = $cerpen->content; // Mengupdate konten karya
             $karya->save(); // Simpan perubahan pada karya
         }
 

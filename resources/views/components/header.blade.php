@@ -9,7 +9,7 @@
                 <ul>
                     <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('pages.karya.index') ? 'active' : '' }}" href="{{ route('pages.karya.index') }}">Karya</a>
+                        <a class="nav-link {{ request()->routeIs('karya.index') ? 'active' : '' }}" href="{{ route('karya.index') }}">Karya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('pages.cerpen.index') ? 'active' : '' }}" href="{{ route('pages.cerpen.index') }}">Cerpen</a>

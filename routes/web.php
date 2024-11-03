@@ -5,22 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 
 //CERPEN
-// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
 Route::get('/cerpen', [App\Http\Controllers\CerpenController::class, 'index'])->name('pages.cerpen.index');
-
-// Rute untuk halaman detail cerpen
-Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('pages.cerpen.show');
+Route::get('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'show'])->name('pages.cerpen.show'); //detail cerpen
 
 //PUISI
-// Rute untuk halaman utama cerpen (menampilkan daftar cerpen yang dipublikasikan)
 Route::get('/puisi', [App\Http\Controllers\PuisiController::class, 'index'])->name('pages.puisi.index');
+Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show'); //detail puisi
 
-// Rute untuk halaman detail cerpen
-Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])->name('pages.puisi.show');
-
-Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('pages.karya.index');
-// Rute untuk halaman detail cerpen
-Route::get('/karya/{id}', [App\Http\Controllers\KaryaController::class, 'show'])->name('pages.karya.show');
+//KARYA
+Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin', function () {
@@ -48,7 +41,7 @@ Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, '
 
 Route::group(['middleware' => 'auth', 'admin'], function () {
     Route::get('pages/home', [App\Http\Controllers\HomeController::class, 'index'])->name('pages.home');
-    Route::get('karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
+    Route::get('/karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
     Route::post('karya', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
@@ -64,9 +57,6 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
     // Rute untuk mengedit cerpen (hanya admin yang bisa mengakses)
     Route::get('/cerpen/edit/{id}', [App\Http\Controllers\CerpenController::class, 'edit'])->name('pages.cerpen.edit');
     Route::put('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'update'])->name('pages.cerpen.update');
-
-    // Rute untuk menghapus cerpen (hanya admin yang bisa mengakses)
-
 
     // Rute untuk mengedit puisi (hanya admin yang bisa mengakses)
     Route::get('/puisi/{id}/edit', [App\Http\Controllers\PuisiController::class, 'edit'])->name('pages.puisi.edit');

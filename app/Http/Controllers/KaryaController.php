@@ -15,12 +15,7 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        // Mengambil semua cerpen dan puisi
-        $cerpen = Cerpen::all(); // Mengambil semua data cerpen
-        $puisi = Puisi::all();   // Mengambil semua data puisi
-
-        // Mengembalikan view dengan data cerpen dan puisi
-        return view('pages.karya.index', compact('cerpen', 'puisi'));
+        return view('pages.karya.index'); //Method ini hanya menampilkan halaman index karya
     }
 
     /**
@@ -28,7 +23,7 @@ class KaryaController extends Controller
      */
     public function create()
     {
-        return view('pages.karya.create');
+        return view('pages.karya.create'); //Method ini hanya menampilkan halaman formulir untuk membuat karya baru
     }
 
     /**
@@ -57,7 +52,7 @@ class KaryaController extends Controller
         if ($karya->category === 'cerpen') {
             // Simpan cerpen 
             Cerpen::create([
-                'karya_id' => $karya->id, // Tambahkan relasi karya_id
+                'karya_id' => $karya->id,
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
                 'content' => $karya->content,
@@ -69,7 +64,7 @@ class KaryaController extends Controller
         } elseif ($karya->category === 'puisi') {
             // Simpan puisi 
             Puisi::create([
-                'karya_id' => $karya->id, // Tambahkan relasi karya_id
+                'karya_id' => $karya->id,
                 'user_id' => $karya->user_id,
                 'title' => $karya->title,
                 'content' => $karya->content,
@@ -85,13 +80,10 @@ class KaryaController extends Controller
      * Display the specified resource.
      */
     public function show($id)
-{
-    // Mengambil semua cerpen dan puisi berdasarkan ID karya
-    $cerpen = Cerpen::where('karya_id', $id)->where('category', 'cerpen')->get();
-    $puisi = Puisi::where('karya_id', $id)->where('category', 'puisi')->get();
-
-    return view('pages.karya.show', compact('cerpen', 'puisi'));
-}    
+    {
+        $karya = Karya::findOrFail($id); //SELECT * FROM karya WHERE id = karya_id
+        return view('pages.karya.show', compact('karya'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

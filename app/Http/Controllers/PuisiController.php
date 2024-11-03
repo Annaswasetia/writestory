@@ -29,8 +29,7 @@ class PuisiController extends Controller
             'content' => 'required',
             'category' => 'required',
             'is_published' => 'required',
-            'karya_id' => 'required|exists:karya,id', // Validasi untuk karya_id
-            // field lain jika diperlukan
+            'karya_id' => 'required|exists:karya,id',
         ]);
 
         // Simpan puisi ke database
@@ -64,7 +63,7 @@ class PuisiController extends Controller
             return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate puisi ini.');
         }
 
-        $karya = Karya::all(); // Pastikan model Karya di-import
+        $karya = Karya::all();
 
         return view('pages.puisi.edit', compact('puisi'));
     }
@@ -87,7 +86,7 @@ class PuisiController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'is_published' => 'nullable|boolean',
-            'karya_id' => 'required|exists:karya,id', // Validasi untuk karya_id
+            'karya_id' => 'required|exists:karya,id',
         ]);
 
         // Update cerpen dengan data baru
@@ -104,7 +103,7 @@ class PuisiController extends Controller
         if ($karya) {
             // Update field di karya dengan informasi dari cerpen
             $karya->title = $puisi->title; // Mengupdate judul karya
-            $karya->content = $puisi->content; // Mengupdate konten karya atau field lain yang relevan
+            $karya->content = $puisi->content; // Mengupdate konten karya
             $karya->save(); // Simpan perubahan pada karya
         }
 

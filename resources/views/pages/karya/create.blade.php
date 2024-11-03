@@ -72,6 +72,7 @@
         <!-- Checkbox untuk Publish Karya -->
         <div class="row mb-4">
             <div class="col">
+                <label class="form-label">Publish Karya <span class="text-danger">*</span></label>
                 <div class="form-check">
                     <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input">
                     <label for="is_published" class="form-check-label">Publish Karya</label>
@@ -82,11 +83,11 @@
 
         <!-- Tombol Submit dan Kembali -->
         <div class="d-flex justify-content-around">
-            <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg"
+            <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi-save-fill"
                 style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Publish</button>
 
-            <a href="{{ route('karya.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg"
-                style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Kembali</a>
+            <a href="{{ route('karya.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg bi-back"
+                style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Back</a>
         </div>
     </form>
 

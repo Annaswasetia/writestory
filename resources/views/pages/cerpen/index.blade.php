@@ -29,9 +29,11 @@
             <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">Cerpen</h3>
             <p class="lead text-muted">Hai kamu yang menemukannya. Nikmatilah cerpen ini karena setiap kalimat yang tergores
                 disini mungkin akan membawamu ke dalam kisah yang tak terduga.
-                mengungkap sebuah makna yang tersembunyi di balik setiap kalimat yang terukir. Nikmatilah setiap detiknya
+                mengungkap sebuah makna yang tersembunyi di balik setiap kalimat yang terukir. Nikmatilah setiap goresan katanya.
             </p>
         </div>
+
+        <hr style="border-top: 2px solid #13a713;">
 
         <div class="row">
             @if (session('success'))
