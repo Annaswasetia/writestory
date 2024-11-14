@@ -50,13 +50,13 @@
         </div>
 
         <!-- Badge Status -->
-        <div class="mt-3">
+       <!-- <div class="mt-3">
             @if ($puisi->is_published)
                 <span class="badge bg-success" style="font-size: 1rem; padding: 10px 15px;">Diterbitkan</span>
             @else
                 <span class="badge bg-warning" style="font-size: 1rem; padding: 10px 15px;">Draft</span>
             @endif
-        </div>
+        </div> -->
 
         <hr style="border-top: 2px solid #919b91;">
 
@@ -68,14 +68,17 @@
             </a>
 
             <!-- Button Update -->
-            <a href="{{ route('pages.puisi.edit', $puisi->id) }}"
-                class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-pencil mr-2"
-                style="font-size: 20px; color: rgb(58, 68, 66); font-family: 'Georgia', 'Times New Roman', serif;">
-                Update
-            </a>
+            @if (Auth::check() && Auth::user()->role === 'admin')
+                <a href="{{ route('pages.puisi.edit', $puisi->id) }}"
+                    class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-pencil mr-2"
+                    style="font-size: 20px; color: rgb(58, 68, 66); font-family: 'Georgia', 'Times New Roman', serif;">
+                    Update
+                </a>
+            @endif
 
-            @if (Auth::check())
-                <form action="{{ route('cerpen.destroy', $puisi->id) }}" method="POST"
+            <!-- Button delete -->
+            @if (Auth::check() && Auth::user()->role === 'admin')
+                <form action="{{ route('puisi.destroy', $puisi->id) }}" method="POST"
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus cerpen ini?');">
                     @csrf
                     @method('DELETE')

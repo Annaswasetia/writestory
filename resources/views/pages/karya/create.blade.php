@@ -29,7 +29,7 @@
                 <label for="content" class="form-label">Konten Karya <span class="text-danger">*</span></label>
                 <textarea id="content" name="content" required placeholder="Masukkan konten karya"
                     class="form-control @error('content') is-invalid @enderror"
-                    style="resize: none; min-height: 100px; max-height: 300px; overflow-y: auto;"></textarea>
+                    style="resize: none; min-height: 100px; max-height: 300px; overflow-y: auto;">{{ old('content') }}</textarea>
 
                 @error('content')
                     <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -57,13 +57,15 @@
         
                 <!-- Radio Button Cerpen -->
                 <div class="form-check">
-                    <input type="radio" name="category" id="cerpen" value="cerpen" class="form-check-input" required>
+                    <input type="radio" name="category" id="cerpen" value="cerpen" class="form-check-input" required 
+                    {{ old('category') == 'cerpen' ? 'checked' : '' }}>
                     <label for="cerpen" class="form-check-label">Cerpen</label>
                 </div>
         
                 <!-- Radio Button Puisi -->
                 <div class="form-check">
-                    <input type="radio" name="category" id="puisi" value="puisi" class="form-check-input" required>
+                    <input type="radio" name="category" id="puisi" value="puisi" class="form-check-input" required 
+                    {{ old('category') == 'puisi' ? 'checked' : '' }}>
                     <label for="puisi" class="form-check-label">Puisi</label>
                 </div>
             </div>
@@ -93,7 +95,7 @@
 
     <!-- Catatan Wajib Isi -->
     <div class="text-center mt-3">
-        <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib diisi.</small>
+        <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib diisi, jika tidak diisi otomatis aka kembali lagi ke halaman create.</small>
     </div>
 </div>
 @endsection

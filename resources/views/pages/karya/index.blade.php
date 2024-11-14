@@ -48,29 +48,43 @@
                 <div class="alert alert-info" role="alert">
                     <strong>📖 Tips Menulis Cerpen:</strong>
                     <ul>
+                        <li>Mencari ide: Ide cerpen bisa didapatkan dari pengalaman pribadi atau mengamati kehidupan orang
+                            lain.</li>
+                        <li>Menentukan tema: Tema atau gagasan utama adalah pondasi dari sebuah cerita.</li>
+                        <li>Menyusun kerangka cerita: Kerangka cerita atau outline akan membantu menjaga alur cerita tetap
+                            fokus dan terstruktur.</li>
                         <li>Fokus pada satu tema atau konflik utama untuk menjaga alur cerita tetap jelas.</li>
                         <li>Bangun karakter yang kuat dan realistis agar pembaca dapat merasakan kedalaman emosi mereka.
                         </li>
+                        <li>Menentukan latar atau setting: Latar atau setting adalah segala keterangan mengenai waktu,
+                            ruang, dan suasana dalam suatu cerita.</li>
                         <li>Gunakan dialog yang alami untuk membawa cerita hidup dan menarik perhatian pembaca.</li>
                         <li>Pastikan setiap kalimat berkontribusi pada pengembangan cerita dan menambah ketegangan.</li>
+                        <li>Setelah selesai menulis, bacalah lagi dan koreksi.</li>
                     </ul>
                 </div>
 
                 <div class="alert alert-info" role="alert">
-                    <strong>✍️ Tips Menulis Puisi:</strong>
+                    <strong>📖 Tips Menulis Puisi:</strong>
                     <ul>
                         <li>Ekspresikan perasaan dan emosi dengan bahasa yang kaya dan imajinatif.</li>
-                        <li>Jelajahi berbagai bentuk puisi, seperti soneta atau haiku, untuk menemukan gaya yang paling
-                            cocok untukmu.</li>
-                        <li>Perhatikan ritme dan bunyi kata, karena ini bisa menciptakan pengalaman yang mendalam bagi
-                            pembaca.</li>
-                        <li>Cobalah untuk menggunakan metafora dan simile untuk menambahkan kedalaman pada puisi kamu.</li>
+                        <li>Memperhatikan Diksi dan Rima: Diksi atau pemilihan kata dan rima
+                            akan membuat puisi lebih harmonis dan enak didengar. Pilihlah kata-kata yang sesuai unsur
+                            keindahan sekaligus makna yang padat, serta perhatikan pola rima yang digunakan.</li>
+                        <li>Menggunakan Gaya Bahasa:
+                            Gaya bahasa dapat membuat puisi lebih menarik dan bermakna. Gunakan gaya bahasa sesuai tema dan
+                            suasana puisi.
+                            Beberapa gaya bahasa yang dapat digunakan dalam puisi antara lain metafora, simile, dan
+                            personifikasi.</li>
+                        </li>
+                        <li>Periksa kembali puisi yang sudah dibuat, apakah pemilihan kata sudah baik dan puisi enak dibaca
+                            atau tidak.</li>
                     </ul>
                 </div>
 
                 <div class="info-box mb-4">
-                    <h4 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">✨ Mengapa Menulis Cerpen
-                        dan Puisi itu Penting?</h4>
+                    <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">✨ Mengapa Menulis Cerpen
+                        dan Puisi</h3>
                     <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555;">
                         Menulis cerpen dan puisi bukan hanya tentang menciptakan karya seni, tetapi juga merupakan cara
                         untuk
@@ -79,89 +93,548 @@
                     </p>
                 </div>
 
-                <div class="info-box mb-4">
-                    <h4 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">🎉 Siap untuk Membagikan
-                        Karyamu?</h4>
+                <div class="alert alert-info" role="alert">
+                    <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">✨ Siap untuk Membagikan
+                        Karyamu?</h3>
                     <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555;">
-                        Silahkan kamu mengklik tombol "Buat Karya" yang sudah disediakan di atas. Mari kita mulai perjalanan
-                        kreatifmu sekarang!
+                        <strong>Sebelum kamu mulai menulis, perhatikanlah beberapa hal penting:</strong>
+                        <li>Semua kolom wajib di isi</li>
+                        <li>Jika ada kolom yang belum di isi, otomatis akan kembali ke halaman create</li>
+                        <li>Hanya Admin yang bisa edit dan hapus cerpen dan puisi</li>
+                        <br>
+                        <strong>Silahkan kamu mengklik tombol "Buat Karya" yang sudah disediakan di atas. Mari kita mulai
+                            perjalanan
+                            kreatifmu sekarang!</strong>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr style="border-top: 2px solid #13a713;">
+    <section>
+        <hr style="width: 50cm; height: 40px; background-color: #adb9b9; border: none; margin: 0,5rem auto 1rem;">
+    </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section" style="background-color: #ffffff; padding: 20px 0;">
 
         <div class="container">
 
             <!-- Judul dan Deskripsi -->
             <div class="section-title" data-aos="fade-up">
-              <h2>
-                  <span style="color: #ff6347;">Menjelajahi</span> 
-                  Dunia Visual <i class="bi bi-stars" style="color: #ffdd57;"></i>
-              </h2>
-              <p>
-                  <strong>Selamat datang di Galeri Visual kami!</strong> 
-                  Di sini, <span style="color: #87ceeb;">langit</span> dan 
-                  <span style="color: #ff69b4;">seni</span> bertemu, menciptakan kisah 
-                  visual yang memukau. Nikmati keindahan penuh warna, setiap gambar 
-                  memancarkan <em>ketenangan</em>, <em>inspirasi</em>, dan <em>energi baru</em>. 
-                  <br><br>Selami setiap sudut galeri, dan biarkan <span style="color: #32cd32;">imajinasimu</span> 
-                  terbang bebas dalam karya visual yang kami sajikan untukmu.
-              </p>
-          </div>
+                <h2
+                    style="text-align: center; font-size: 2.5rem; color: #87ceeb; font-family: 'Cinzel', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">
+                    <span style="font-weight: bold;">Menjelajahi Dunia Visual</span>
+                    <i class="bi bi-stars" style="color: #87ceeb; font-size: 3rem;"></i>
+                </h2>
+                <h4 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #555">
+                    Art | Sky
+                </h4>
+                <p style="font-family: 'Arial', sans-serif; color: #777; font-size: 1rem; text-align: center;">
+                    Jelajahi keindahan seni dan langit yang memukau. Langit yang selalu menyembunyikan keindahan dengan
+                    rupa yang berbeda.
+                    Bentala tidak mungkin bisa memeluk cakrawala, jadi karena itu, mari lihat keindahannya tanpa memiliki,
+                    mengagumi jauh lebih senang.
+                    Temukan berbagai karya yang membawa imajinasi ke dunia
+                    baru.
+                </p>
+            </div>
 
-            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <div class="isotope-layout" data-default-filter=".filter-art" data-layout="masonry" data-sort="original-order"
+                style="padding-top: 5px;">
 
                 <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-sky">Langit</li>
-                    <li data-filter=".filter-art">Art</li>
-                </ul><!-- End Portfolio Filters -->
+                    <li data-filter=".filter-art" class="filter-active"><i class="bi bi-paint-bucket"></i>Art</li>
+                    <li data-filter=".filter-sky"><i class="bi bi-cloud"></i>Sky</li>
+                </ul>
 
-                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="50" style="padding-top: 30px;">
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="50"
+                        style="padding-top: 30px;">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
-                        <img src="assets/img/masonry-portfolio/bintang.jpeg" class="img-fluid" alt="" width="300"
-                            height="200">
-                        <div class="portfolio-info">
-                            <h4>Art 1</h4>
-                            <p>selalu senang ya?</p>
-                            <a href="assets/img/masonry-portfolio/bintang.jpeg" title="App 1"
-                                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/satu.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p>selalu senang ya?</p>
+                                <a href="assets/img/gambar/satu.jpeg" title="Art 1" data-gallery="portfolio-gallery-branding"
+                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/dua.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p>tenang, kamu pasti bisa ko.</p>
+                                <a href="assets/img/gambar/dua.jpeg" title="Art 2"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/tiga.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p>gpp ga sesuai ekspektasi, usaha lagi.</p>
+                                <a href="assets/img/gambar/tiga.jpeg" title="Art 3"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
                         </div>
-                    </div><!-- End Portfolio Item -->
 
-                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
-                        <img src="assets/img/masonry-portfolio/girl.jpeg" class="img-fluid" alt="" width="300"
-                            height="200">
-                        <div class="portfolio-info">
-                            <h4>Art 2</h4>
-                            <p>tenang, kamu pasti bisa ko.</p>
-                            <a href="assets/img/masonry-portfolio/girl.jpeg" title="Product 1"
-                                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/sembilan.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/sembilan.jpg" title="Art 9"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
                         </div>
-                    </div><!-- End Portfolio Item -->
 
-                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
-                        <img src="assets/img/masonry-portfolio/bintang2.jpeg" class="img-fluid" alt=""
-                            width="300" height="200">
-                        <div class="portfolio-info">
-                            <h4>Art 3</h4>
-                            <p>gpp ga sesuai ekspektasi, usaha lagi.</p>
-                            <a href="assets/img/masonry-portfolio/bintang2.jpeg" title="Branding 1"
-                                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/sepuluh.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/sepuluh.jpg" title="Art 10"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/sebelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/sebelas.jpg" title="Art 11"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/duabelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/duabelas.jpg" title="Art 12"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/tigabelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/tigabelas.jpg" title="Art 13"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/empatbelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/empatbelas.jpg" title="Art 14"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/limabelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/limabelas.jpg" title="Art 15"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/enambelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/enambelas.jpg" title="Art 16"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/tujuhbelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/tujuhbelas.jpg" title="Art 17"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/delapanbelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/delapanbelas.jpg" title="Art 18"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/sembilanbelas.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/sembilanbelas.jpg" title="Art 19"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/empat.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/empat.jpg" title="Art 4"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/lima.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/lima.jpg" title="Art 5"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/enam.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/enam.jpg" title="Art 6"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/tujuh.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/tujuh.jpg" title="Art 7"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
+                            <img src="assets/img/gambar/delapan.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Art</h4>
+                                <p></p>
+                                <a href="assets/img/gambar/delapan.jpg" title="Art 8"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- langit -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/satu.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Sky</h4>
+                                <p>...</p>
+                                <a href="assets/img/langit/satu.jpeg" title="Sky 1"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/dua.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/dua.jpeg" title="Sky 2"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/tiga.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/tiga.jpeg" title="Sky 3"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/empat.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/empat.jpeg" title="Sky 4"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/lima.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/lima.jpeg" title="Sky 5"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/enam.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/enam.jpeg" title="Sky 6"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/tujuh.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/tujuh.jpeg" title="Sky 7"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/delapan.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/delapan.jpeg" title="Sky 8"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/sembilan.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/sembilan.jpeg" title="Sky 9"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/sepuluh.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/sepuluh.jpeg" title="Sky 10"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/sebelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/sebelas.jpeg" title="Sky 11"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duabelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duabelas.jpeg" title="Sky 12"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/tigabelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/tigabelas.jpeg" title="Sky 13"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/empatbelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/empatbelas.jpeg" title="Sky 14"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/limabelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/limabelas.jpeg" title="Sky 15"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/enambelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/enambelas.jpeg" title="Sky 16"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/tujuhbelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/tujuhbelas.jpeg" title="Sky 17"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/delapanbelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/delapanbelas.jpeg" title="Sky 18"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/sembilanbelas.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/sembilanbelas.jpeg" title="Sky 19"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duapuluh.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duapuluh.jpeg" title="Sky 20"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duasatu.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duasatu.jpeg" title="Sky 21"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duadua.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duadua.jpeg" title="Sky 22"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duatiga.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duatiga.jpeg" title="Sky 23"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/duaempat.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/duaempat.jpeg" title="Sky 24"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sky">
+                            <img src="assets/img/langit/dualima.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h5>Sky</h5>
+                                <p>...</p>
+                                <a href="assets/img/langit/dualima.jpeg" title="Sky 25"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                            </div>
                         </div>
                     </div>
-
-                </div>
 
             </div>
 

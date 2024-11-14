@@ -26,9 +26,8 @@
             <h1 class="display-4 font-weight-bold text-primary bi-book"
                 style="font-size: 50px; font-family: 'Georgia', 'Times New Roman', serif; color: #0dc225;">Karya Sastra</h1>
             <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">Puisi</h3>
-            <p class="lead text-muted" style="font-family: 'Open Sans', sans-serif; font-size: 18px;">Hai kamu yang
-                menemukannya. Nikmatilah puisi ini, karena setiap
-                kata yang terukir terkadang menyimpan sebuah pesan yang mendalam dari hati yang belum bisa terucap</p>
+            <p class="lead text-muted" style="font-family: 'Open Sans', sans-serif; font-size: 18px;">Hai kamu. Nikmatilah sebuah karya sastra yang berbentuk puisi ini, karena setiap
+                kata dan kalimat panjang yang terukir terkadang menyimpan sebuah pesan yang mendalam dari hati yang belum bisa terucap</p>
         </div>
 
         <hr style="border-top: 2px solid #13a713;">
@@ -49,7 +48,7 @@
             @foreach ($puisi as $item)
                 <!-- Loop through each puisi item -->
                 <div class="col-12 col-md-6 mb-4" style="padding-top: 50px">
-                    <div class="card shadow-lg h-100"
+                    <div class="card shadow-sm h-100 bg-light"
                         style="border-radius: 15px; overflow: hidden; transition: transform 0.3s;">
                         <div class="card-body d-flex flex-column">
                             <!-- Title -->

@@ -1,24 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="page-title light-background" style="padding-top: 120px;">
-    <div class="container">
-        <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Cerpen</h1>
-        <nav class="breadcrumbs" style="font-family: 'Open Sans', sans-serif;">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
+    <div class="page-title light-background" style="padding-top: 120px;">
+        <div class="container">
+            <h1 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #0dc225;">Cerpen</h1>
+            <nav class="breadcrumbs" style="font-family: 'Open Sans', sans-serif;">
+                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
 
-                <li style="margin-right: 8px;">
-                    <a href="{{ route('home') }}" style="text-decoration: none; color: #4fa94f; font-weight: bold;">
-                        Home
-                    </a>
-                </li>
-                <li style="color: #555; font-weight: bold;">
-                    Detail Cerpen
-                </li>
-            </ol>
-        </nav>
+                    <li style="margin-right: 8px;">
+                        <a href="{{ route('home') }}" style="text-decoration: none; color: #4fa94f; font-weight: bold;">
+                            Home
+                        </a>
+                    </li>
+                    <li style="color: #555; font-weight: bold;">
+                        Detail Cerpen
+                    </li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
     <div class="container" style="margin-top: 70px;">
         <h1 class="card-title"
             style="font-family: 'Palatino', serif; color: #0f0f11; font-size: 2.8rem; text-shadow: 2px 2px 5px rgba(9, 211, 9, 0.5);">
@@ -50,13 +50,13 @@
         </div>
 
         <!-- Badge Status -->
-        <div class="mt-3">
+        <!-- <div class="mt-3">
             @if ($cerpen->is_published)
                 <span class="badge bg-success" style="font-size: 1rem; padding: 10px 15px;">Diterbitkan</span>
             @else
                 <span class="badge bg-warning" style="font-size: 1rem; padding: 10px 15px;">Draft</span>
             @endif
-        </div>
+        </div> -->
 
         <hr style="border-top: 2px solid #919b91;">
 
@@ -68,19 +68,24 @@
             </a>
 
             <!-- Button Update -->
-            <a href="{{ route('pages.cerpen.edit', $cerpen->id) }}"
-                class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-pencil mr-2"
-                style="font-size: 20px; color: rgb(58, 68, 66); font-family: 'Georgia', 'Times New Roman', serif;">
-                Update
-            </a>
+            @if (Auth::check() && Auth::user()->role === 'admin')
+                <a href="{{ route('pages.cerpen.edit', $cerpen->id) }}"
+                    class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-pencil mr-2"
+                    style="font-size: 20px; color: rgb(58, 68, 66); font-family: 'Georgia', 'Times New Roman', serif;">
+                    Update
+                </a>
+            @endif
 
-            @if (Auth::check())
+            <!-- Button delete -->
+            @if (Auth::check() && Auth::user()->role === 'admin')
                 <form action="{{ route('cerpen.destroy', $cerpen->id) }}" method="POST"
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus cerpen ini?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-trash mr-2"
-                        style="font-size: 20px; color: rgb(255, 0, 0); font-family: 'Georgia', 'Times New Roman', serif;">Delete</button>
+                        style="font-size: 20px; color: rgb(255, 0, 0); font-family: 'Georgia', 'Times New Roman', serif;">
+                        Delete
+                    </button>
                 </form>
             @endif
         </div>

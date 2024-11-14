@@ -21,7 +21,7 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     });
 });
 
-//tampilan awal
+//TAMPILAN UTAMA
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

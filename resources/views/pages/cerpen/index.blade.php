@@ -27,9 +27,10 @@
             <h1 class="display-4 font-weight-bold text-primary bi-book"
                 style="font-size: 50px; font-family: 'Georgia', 'Times New Roman', serif;">Karya Sastra</h1>
             <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">Cerpen</h3>
-            <p class="lead text-muted">Hai kamu yang menemukannya. Nikmatilah cerpen ini karena setiap kalimat yang tergores
-                disini mungkin akan membawamu ke dalam kisah yang tak terduga.
-                mengungkap sebuah makna yang tersembunyi di balik setiap kalimat yang terukir. Nikmatilah setiap goresan katanya.
+            <p class="lead text-muted">Hai kamu. Nikmatilah karya sastra yang berbentuk cerpen ini,karena setiap kalimat
+                yang terukir
+                disini mungkin saja akan membawamu ke dalam kisah yang tak terduga.
+                mengungkap sebuah makna yang tersembunyi di balik setiap kata dan kalimat yang terukir.
             </p>
         </div>
 
@@ -49,9 +50,9 @@
             @endif
 
             @foreach ($cerpen as $item)
-                <!-- Loop through each cerpen item -->
+                <!-- cerpen item -->
                 <div class="col-12 mb-4">
-                    <div class="card shadow-sm h-100"
+                    <div class="card shadow-sm h-100 bg-light"
                         style="border-radius: 15px; overflow: hidden; border: 1px solid #dcdcdc;">
                         <div class="card-body d-flex flex-column">
                             <!-- Title -->

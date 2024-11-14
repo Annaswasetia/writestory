@@ -2,15 +2,15 @@
 
 @section('content')
 <section class="vh-100">
-    <div class="container py-5 h-100">
+    <div class="container py-5 h-100" style="margin-top: 40px;">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card shadow-2-strong bg-light" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
                     <form action="{{ route('login')}}" method="POST">
                         @csrf
 
-                        <h3 class="mb-5">Sign in</h3>
+                        <h3 class="mb-5">Sign-In WriteStory</h3>
 
                         <div data-mdb-input-init class="form-outline mb-4">
                             <input type="email" name="email" id="email" class="form-control form-control-lg"
@@ -42,11 +42,11 @@
 
 
                         <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg"
-                            style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Login</button>
+                            style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Sign-In</button>
 
                         <div>
                             <p class="mb-0">Don't have an account? <a href="{{ route('register') }}"
-                                    class="link-danger">Sign Up</a>
+                                    class="link-danger">Sign-Up</a>
                             </p>
                         </div>
                         
