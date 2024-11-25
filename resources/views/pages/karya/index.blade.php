@@ -98,9 +98,11 @@
                         Karyamu?</h3>
                     <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555;">
                         <strong>Sebelum kamu mulai menulis, perhatikanlah beberapa hal penting:</strong>
-                        <li>Semua kolom wajib di isi</li>
-                        <li>Jika ada kolom yang belum di isi, otomatis akan kembali ke halaman create</li>
-                        <li>Hanya Admin yang bisa edit dan hapus cerpen dan puisi</li>
+                        <li>Semua kolom wajib di isi.</li>
+                        <li>Jika ada kolom yang belum di isi, otomatis akan kembali ke halaman create.</li>
+                        <li>Cerpen atau puisi yang kamu mau buat harus merupakan karya asli atau pemikiran sendiri.</li>
+                        <li>Tidak boleh copy karya orang lain atau melakukan plagiarisme!!!</li>
+                        <li>Hanya Admin yang bisa menghapus cerpen dan puisi.</li>
                         <br>
                         <strong>Silahkan kamu mengklik tombol "Buat Karya" yang sudah disediakan di atas. Mari kita mulai
                             perjalanan
@@ -159,7 +161,7 @@
                                 <a href="assets/img/gambar/satu.jpeg" title="Art 1" data-gallery="portfolio-gallery-branding"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
-                        </div><!-- End Portfolio Item -->
+                        </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
                             <img src="assets/img/gambar/dua.jpeg" class="img-fluid" alt="">
@@ -170,8 +172,7 @@
                                     data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                         class="bi bi-zoom-in"></i></a>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
+                        </div>
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-art">
                             <img src="assets/img/gambar/tiga.jpeg" class="img-fluid" alt="">
                             <div class="portfolio-info">

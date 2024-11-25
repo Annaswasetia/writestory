@@ -16,7 +16,7 @@ class RegisterController extends Controller
     // Menampilkan form registrasi
     public function showRegistrationForm()
     {
-        return view('auth.register'); // Ganti dengan nama view yang sesuai
+        return view('auth.register');
     }
 
     public function register(Request $request)
@@ -79,7 +79,7 @@ class RegisterController extends Controller
 
         Auth::login($user); // Login otomatis setelah registrasi
 
-        return redirect()->route('profil'); // Ganti dengan rute yang sesuai
+        return redirect()->route('profil');
     }
 
     /**

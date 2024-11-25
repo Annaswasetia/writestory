@@ -34,12 +34,12 @@ class PuisiController extends Controller
 
         // Simpan puisi ke database
         $puisi = Puisi::create([
-            'user_id' => Auth::user()->id, // ID pengguna yang membuat cerpen
-            'title' => $request->input('title'), // Mengambil data title dari request
-            'content' => $request->input('content'), // Mengambil data content dari request
-            'category' => $request->input('category'), // Mengambil data category dari request
-            'is_published' => true, // Simpan sebagai dipublikasikan
-            'karya_id' => $request->input('karya_id'), // Menyimpan karya_id
+            'user_id' => Auth::user()->id, 
+            'title' => $request->input('title'),
+            'content' => $request->input('content'), 
+            'category' => $request->input('category'), 
+            'is_published' => true,
+            'karya_id' => $request->input('karya_id'), 
         ]);
 
         // Redirect ke halaman daftar puisi
@@ -58,8 +58,8 @@ class PuisiController extends Controller
     {
         $puisi = Puisi::findOrFail($id);
 
-        // Cek apakah user adalah admin
-        if (Auth::check() && Auth::user()->role !== 'admin') {
+        // Cek apakah user adalah admin dan pemilik
+        if (Auth::check() && (Auth::user()->role !== 'admin' && Auth::user()->id !== $puisi->user_id)){
             return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate puisi ini.');
         }
 
@@ -76,8 +76,8 @@ class PuisiController extends Controller
         // Temukan cerpen berdasarkan ID
         $puisi = Puisi::findOrFail($id);
 
-        // Pastikan hanya admin yang bisa mengupdate cerpen
-        if (Auth::check() && Auth::user()->role !== 'admin') {
+        // Pastikan hanya admin dan pemilik yang bisa mengupdate cerpen
+        if (Auth::check() && (Auth::user()->role !== 'admin' && Auth::user()->id !== $puisi->user_id)) {
             return redirect()->route('pages.puisi.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate puisi ini.');
         }
 
@@ -101,10 +101,9 @@ class PuisiController extends Controller
         $karya = Karya::find($puisi->karya_id);
 
         if ($karya) {
-            // Update field di karya dengan informasi dari cerpen
-            $karya->title = $puisi->title; // Mengupdate judul karya
-            $karya->content = $puisi->content; // Mengupdate konten karya
-            $karya->save(); // Simpan perubahan pada karya
+            $karya->title = $puisi->title; 
+            $karya->content = $puisi->content; 
+            $karya->save(); 
         }
 
         // Redirect ke halaman daftar cerpen dengan pesan sukses

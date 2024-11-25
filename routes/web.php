@@ -15,10 +15,9 @@ Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])
 //KARYA
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
+
 Route::middleware([AdminMiddleware::class])->group(function () {
-    Route::get('/admin', function () {
-        return redirect('/profil'); // Arahkan admin ke halaman profil
-    });
+    Route::get('/admin', [App\Http\Controllers\ProfileAdminController::class, 'index'])->name('profileadmin');
 });
 
 //TAMPILAN UTAMA
@@ -46,19 +45,13 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
 
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
-    Route::get('/profil/edit', [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit.profile');
-
-    // Rute untuk menghapus cerpen (hanya admin yang bisa mengakses)
     Route::delete('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'destroy'])->name('cerpen.destroy');
-
-    // Rute untuk menghapus puisi (hanya admin yang bisa mengakses)
-    Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');
-
-    // Rute untuk mengedit cerpen (hanya admin yang bisa mengakses)
     Route::get('/cerpen/edit/{id}', [App\Http\Controllers\CerpenController::class, 'edit'])->name('pages.cerpen.edit');
     Route::put('/cerpen/{id}', [App\Http\Controllers\CerpenController::class, 'update'])->name('pages.cerpen.update');
 
-    // Rute untuk mengedit puisi (hanya admin yang bisa mengakses)
+    Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');
     Route::get('/puisi/{id}/edit', [App\Http\Controllers\PuisiController::class, 'edit'])->name('pages.puisi.edit');
     Route::put('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'update'])->name('pages.puisi.update');
 });
+
+Route::delete('/admin/user/{id}', [App\Http\Controllers\ProfileAdminController::class, 'deleteUser'])->name('admin.deleteUser')->middleware('auth');

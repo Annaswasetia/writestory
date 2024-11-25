@@ -23,7 +23,12 @@
                             Profil
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
-                            <li><a class="dropdown-item {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}">Profil Saya</a></li>
+                            <li>
+                                <a class="dropdown-item {{ request()->routeIs('profile') || request()->routeIs('profileadmin') ? 'active' : '' }}" 
+                                   href="{{ Auth::check() && Auth::user()->role === 'admin' ? route('profileadmin') : route('profile') }}">
+                                   Profil Saya
+                                </a>
+                            </li>
                             <li><a class="dropdown-item {{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a></li>
                             <li>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

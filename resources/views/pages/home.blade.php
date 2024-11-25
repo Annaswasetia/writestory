@@ -47,20 +47,17 @@
 
                     <!-- Text Content -->
                     <div class="col-lg-4 order-lg-1">
-                        <!-- Section Subtitle -->
                         <span class="section-subtitle" data-aos="fade-up"
                             style="font-size: 16px; color: #98995d; letter-spacing: 1px; font-style: italic;">
                             Welcome Karya Sastra
                         </span>
 
-                        <!-- Main Heading -->
                         <h1 class="mb-4" data-aos="fade-up"
                             style="color: #699b76; font-size: 18px; font-weight: bold; font-style: italic; line-height: 1.5;">
                             Ada begitu banyak insan di dunia ini, namun hanya sedikit yang mampu mendengarkan setiap kata
                             yang terucap dengan penuh makna.
                         </h1>
 
-                        <!-- Description Paragraph -->
                         <p data-aos="fade-up"
                             style="font-size: 15px; color: #7c8f81; line-height: 1.8; font-family: 'Georgia', serif;">
                             Fatamorgana yang kuciptakan bukanlah untuk mengaburkan, melainkan untuk menghadirkan keindahan
@@ -69,7 +66,6 @@
                             keajaiban dan keindahan yang tak terduga 🥀🌷.
                         </p>
 
-                        <!-- Buttons for "Cerpen" and "Puisi" -->
                         <div class="d-flex justify-content-start mt-5" data-aos="fade-up">
                             <p class="me-3">
                                 <a href="{{ route('pages.cerpen.index') }}" class="btn btn-get-started"
@@ -165,20 +161,20 @@
                 <p
                     style="font-family: 'Georgia', 'Times New Roman', serif; color: #555; font-size: 18px; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
                     Temukan berbagai karya sastra cerpen dan puisi yang menginspirasi dan menggugah imajinasi.
-                    Nikmati setiap kata pada kalimat yang terukir, setiap kata yang terukir mungkin saja teradapat keindahan tersembunyi
+                    Nikmati setiap kata pada kalimat yang terukir, setiap kata yang terukir mungkin saja terdapat keindahan yang tersembunyi
                     didalamnya
                     🥀🍃.
                 </p>
             </div>
 
-            <!-- Cerpen Terbaru -->
-            @if ($cerpen->count() > 0)
+            
+            @if ($cerpen->count() > 0) <!-- Cerpen terbaru, memastikan data cerpen ada -->
                 <div class="container" style="margin-top: 100px;">
                     <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: black">
                         Cerpen Terbaru
                     </h3>
                     <div class="row">
-                        @foreach ($cerpen as $item)
+                        @foreach ($cerpen as $item) <!-- perulangan digunakan untuk menampilkan setiap cerpen -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card shadow-sm border-light"
                                     style="border-radius: 15px; background-color: #f5f5f5; transition: transform 0.3s; position: relative;">
@@ -194,6 +190,7 @@
                                         <p class="card-text" style="color: #666; font-style: italic;">
                                             {{ Str::limit($item->content, 100) }}
                                         </p>
+                                        <!--mengarahkan pengguna ke halaman detail cerpen berdasarkan ID-nya-->
                                         <a href="{{ route('pages.cerpen.show', $item->id) }}" class="text-primary"
                                             style="text-decoration: none; font-weight: bold;">
                                             Baca Cerpen »
@@ -229,6 +226,8 @@
                                         <p class="card-text" style="color: #666; font-style: italic;">
                                             {{ Str::limit($item->content, 100) }}
                                         </p>
+
+                                        <!--mengarahkan pengguna ke halaman detail puisi berdasarkan ID-nya-->
                                         <a href="{{ route('pages.puisi.show', $item->id) }}" class="text-primary"
                                             style="text-decoration: none; font-weight: bold;">
                                             Baca Puisi »

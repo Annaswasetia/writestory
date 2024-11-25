@@ -68,7 +68,7 @@
             </a>
 
             <!-- Button Update -->
-            @if (Auth::check() && Auth::user()->role === 'admin')
+            @if (Auth::check() && (Auth::user()->role === 'admin' || Auth::user()->id === $puisi->user_id))
                 <a href="{{ route('pages.puisi.edit', $puisi->id) }}"
                     class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-pencil mr-2"
                     style="font-size: 20px; color: rgb(58, 68, 66); font-family: 'Georgia', 'Times New Roman', serif;">

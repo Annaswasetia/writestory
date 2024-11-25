@@ -8,9 +8,8 @@
     </h1>
 
     <form action="{{ route('karya.store') }}" method="POST" class="bg-light p-4 rounded shadow">
-        @csrf <!-- Token untuk keamanan CSRF -->
+        @csrf 
 
-        <!-- Input Judul Karya -->
         <div class="row mb-4">
             <div class="col">
                 <label for="title" class="form-label">Judul Karya <span class="text-danger">*</span></label>
@@ -23,7 +22,6 @@
             </div>
         </div>
 
-        <!-- Input Konten Karya -->
         <div class="row mb-4">
             <div class="col">
                 <label for="content" class="form-label">Konten Karya <span class="text-danger">*</span></label>
@@ -43,7 +41,7 @@
                 const contentArea = document.getElementById('content');
 
                 contentArea.addEventListener('input', function() {
-                    this.style.height = 'auto'; // Reset tinggi
+                    this.style.height = 'auto'; 
                     this.style.height = (this.scrollHeight) + 'px'; // Sesuaikan tinggi berdasarkan konten
                 });
             });
@@ -54,15 +52,13 @@
         <div class="row mb-4">
             <div class="col">
                 <label class="form-label">Kategori Karya <span class="text-danger">*</span></label>
-        
-                <!-- Radio Button Cerpen -->
+
                 <div class="form-check">
                     <input type="radio" name="category" id="cerpen" value="cerpen" class="form-check-input" required 
                     {{ old('category') == 'cerpen' ? 'checked' : '' }}>
                     <label for="cerpen" class="form-check-label">Cerpen</label>
                 </div>
-        
-                <!-- Radio Button Puisi -->
+
                 <div class="form-check">
                     <input type="radio" name="category" id="puisi" value="puisi" class="form-check-input" required 
                     {{ old('category') == 'puisi' ? 'checked' : '' }}>
@@ -93,7 +89,6 @@
         </div>
     </form>
 
-    <!-- Catatan Wajib Isi -->
     <div class="text-center mt-3">
         <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib diisi, jika tidak diisi otomatis aka kembali lagi ke halaman create.</small>
     </div>

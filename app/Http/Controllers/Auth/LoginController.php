@@ -9,11 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-
-        // Tampilkan form login
         public function showLoginForm()
     {
-        return view('auth.login'); // Ganti dengan nama view yang sesuai
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -24,7 +22,14 @@ class LoginController extends Controller
         $remember = $request->has('remember');
 
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->intended('profile'); // Ganti dengan rute yang sesuai
+            // Cek apakah pengguna yang login adalah admin
+            if (Auth::user()->role === 'admin') {
+                // Jika admin, arahkan ke halaman profileadmin
+                return redirect()->route('profileadmin'); // Atau bisa langsung '/profileadmin'
+            } else {
+                // Jika pengguna biasa (user), arahkan ke halaman profile
+                return redirect()->route('profile'); // Atau bisa langsung '/profile'
+            }
         }
 
         return back()->withErrors([
@@ -36,7 +41,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home'); // Ganti dengan rute yang sesuai
+        return redirect()->route('home'); 
     }
     /*
     |--------------------------------------------------------------------------

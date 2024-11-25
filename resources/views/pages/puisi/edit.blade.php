@@ -16,12 +16,11 @@
             <i class="bi bi-pencil" style="margin-right: 10px;"></i>Edit Puisi
         </h1>
 
-        <!-- Form untuk Edit Cerpen -->
+        <!-- Form untuk Edit Puisi berdasarkan id puisi yang ingin di perbarui-->
         <form action="{{ route('pages.puisi.update', $puisi->id) }}" method="POST" class="bg-light p-4 rounded shadow">
-            @csrf <!-- Token untuk keamanan CSRF -->
-            @method('PUT') <!-- Method untuk memperbarui data -->
+            @csrf 
+            @method('PUT')
 
-            <!-- Input Judul Karya -->
             <div class="row mb-4">
                 <div class="col">
                     <label for="title" class="form-label">Judul Karya <span class="text-danger">*</span></label>
@@ -35,7 +34,6 @@
                 </div>
             </div>
 
-            <!-- Input Konten Karya -->
             <div class="row mb-4">
                 <div class="col">
                     <label for="content" class="form-label">Konten Karya <span class="text-danger">*</span></label>
@@ -65,20 +63,17 @@
                 });
             </script>
 
-            <!-- Dropdown yang di-disable -->
             <select id="karya_id_disabled" required class="form-select" disabled>
                 <option value="{{ $puisi->karya_id }}">{{ $puisi->karya->title }}</option>
             </select>
 
-            <!-- Hidden input untuk mengirim data karya_id ke server -->
             <input type="hidden" name="karya_id" value="{{ $puisi->karya_id }}">
 
-            <!-- Checkbox untuk Publish Karya -->
             <div class="row mb-4">
                 <div class="col">
                     <div class="form-check">
                         <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input"
-                            {{ $puisi->is_published ? 'checked' : '' }}>
+                            {{ $puisi->is_published ? 'checked' : '' }} onclick="return false;">
                         <label for="is_published" class="form-check-label">Publish Karya</label>
                     </div>
                 </div>
@@ -94,11 +89,5 @@
                     style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Back</a>
             </div>
         </form>
-
-        <!-- Catatan Wajib Isi -->
-        <div class="text-center mt-3">
-            <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib
-                diisi.</small>
-        </div>
     </div>
 @endsection

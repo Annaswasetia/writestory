@@ -24,21 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // Ambil 3 cerpen terbaru yang dipublikasikan
+        // mengambil 3 cerpen dan puisi
         $cerpen = Karya::where('category', 'cerpen')
                                 ->where('is_published', true)
                                 ->orderBy('created_at', 'desc')
                                 ->take(3)
                                 ->get();
 
-        // Ambil 3 puisi terbaru yang dipublikasikan
         $puisi = Karya::where('category', 'puisi')
                                 ->where('is_published', true)
                                 ->orderBy('created_at', 'desc')
                                 ->take(3)
                                 ->get();
 
-        // Kirim data cerpen dan puisi ke view home
         return view('pages.home', compact('cerpen', 'puisi'));
     }
 }

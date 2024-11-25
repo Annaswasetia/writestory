@@ -52,7 +52,11 @@
                         </div>
 
                         <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg"
-                            style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Sign-Up</button>
+                            style="font-size: 20px; color: rgb(235, 20, 20); font-family: 'Georgia', 'Times New Roman', serif;">Sign-Up</button>
+
+                            <p class="text-center" style="font-size: 16px; color: #555;">
+                                Do you have an account? <a href="{{ route('login') }}" style="color: #0dc225; font-weight: bold;">Login di sini</a>
+                            </p>
 
                         </form>
 

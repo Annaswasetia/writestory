@@ -16,12 +16,11 @@
             <i class="bi bi-pencil" style="margin-right: 10px;"></i>Edit Cerpen
         </h1>
 
-        <!-- Form untuk Edit Cerpen -->
+        <!-- Form untuk Edit Cerpen berdasarkan id cerpen yang ingiin di perbarui-->
         <form action="{{ route('pages.cerpen.update', $cerpen->id) }}" method="POST" class="bg-light p-4 rounded shadow">
-            @csrf <!-- Token untuk keamanan CSRF -->
-            @method('PUT') <!-- Method untuk memperbarui data -->
+            @csrf 
+            @method('PUT')
 
-            <!-- Input Judul Karya -->
             <div class="row mb-4">
                 <div class="col">
                     <label for="title" class="form-label">Judul Karya <span class="text-danger">*</span></label>
@@ -35,7 +34,6 @@
                 </div>
             </div>
 
-            <!-- Input Konten Karya -->
             <div class="row mb-4">
                 <div class="col">
                     <label for="content" class="form-label">Konten Karya <span class="text-danger">*</span></label>
@@ -54,13 +52,13 @@
                 document.addEventListener('DOMContentLoaded', function() {
                     const contentArea = document.getElementById('content');
 
-                    // Set height awal berdasarkan konten yang ada
-                    contentArea.style.height = 'auto'; // Reset tinggi
-                    contentArea.style.height = (contentArea.scrollHeight) + 'px'; // Sesuaikan tinggi berdasarkan konten
+                    
+                    contentArea.style.height = 'auto';
+                    contentArea.style.height = (contentArea.scrollHeight) + 'px'; 
 
                     contentArea.addEventListener('input', function() {
-                        this.style.height = 'auto'; // Reset tinggi
-                        this.style.height = (this.scrollHeight) + 'px'; // Sesuaikan tinggi berdasarkan konten
+                        this.style.height = 'auto';
+                        this.style.height = (this.scrollHeight) + 'px'; 
                     });
                 });
             </script>
@@ -70,7 +68,6 @@
                 <option value="{{ $cerpen->karya_id }}">{{ $cerpen->karya->title }}</option>
             </select>
 
-            <!-- Hidden input untuk mengirim data karya_id ke server -->
             <input type="hidden" name="karya_id" value="{{ $cerpen->karya_id }}">
 
             <!-- Checkbox untuk Publish Karya -->
@@ -78,7 +75,7 @@
                 <div class="col">
                     <div class="form-check">
                         <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input"
-                            {{ $cerpen->is_published ? 'checked' : '' }}>
+                            {{ $cerpen->is_published ? 'checked' : '' }} onclick="return false;">
                         <label for="is_published" class="form-check-label">Publish Karya</label>
                     </div>
                 </div>
@@ -94,11 +91,5 @@
                     style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Back</a>
             </div>
         </form>
-
-        <!-- Catatan Wajib Isi -->
-        <div class="text-center mt-3">
-            <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib
-                diisi.</small>
-        </div>
     </div>
 @endsection

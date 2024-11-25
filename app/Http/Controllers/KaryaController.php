@@ -10,25 +10,16 @@ use Illuminate\Support\Facades\Auth;
 
 class KaryaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('pages.karya.index'); //Method ini hanya menampilkan halaman index karya
+        return view('pages.karya.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('pages.karya.create'); //Method ini hanya menampilkan halaman formulir untuk membuat karya baru
+        return view('pages.karya.create'); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
 
@@ -41,11 +32,11 @@ class KaryaController extends Controller
 
         // Simpan karya ke database
         $karya = Karya::create([
-            'user_id' => Auth::user()->id, // ID pengguna yang membuat karya
-            'title' => $request->input('title'), // Mengambil data title dari request
-            'content' => $request->input('content'), // Mengambil data content dari request
-            'category' => $request->input('category'), // Mengambil data category dari request
-            'is_published' => $request->has('is_published'), // Menyimpan status publish berdasarkan checkbox
+            'user_id' => Auth::user()->id,
+            'title' => $request->input('title'), 
+            'content' => $request->input('content'),
+            'category' => $request->input('category'),
+            'is_published' => $request->has('is_published'),
         ]);
 
         // Jika karya dipublikasikan sebagai cerpen
@@ -76,33 +67,22 @@ class KaryaController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
         $karya = Karya::findOrFail($id); //SELECT * FROM karya WHERE id = karya_id
         return view('pages.karya.show', compact('karya'));
     }
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
