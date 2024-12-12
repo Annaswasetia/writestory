@@ -16,6 +16,10 @@ Route::get('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'show'])
 Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 
+//DRAFT
+Route::get('/draft', [App\Http\Controllers\DraftController::class, 'showDrafts'])->name('pages.draft.index');
+
+
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin', [App\Http\Controllers\ProfileAdminController::class, 'index'])->name('profileadmin');
 });
@@ -52,6 +56,26 @@ Route::group(['middleware' => 'auth', 'admin'], function () {
     Route::delete('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'destroy'])->name('puisi.destroy');
     Route::get('/puisi/{id}/edit', [App\Http\Controllers\PuisiController::class, 'edit'])->name('pages.puisi.edit');
     Route::put('/puisi/{id}', [App\Http\Controllers\PuisiController::class, 'update'])->name('pages.puisi.update');
+
+    // Route untuk menampilkan detail draft
+Route::get('draft/{id}', [App\Http\Controllers\DraftController::class, 'show'])->name('pages.draft.show');
+
+// Route untuk menampilkan halaman edit draft
+Route::get('draft/{id}/edit', [App\Http\Controllers\DraftController::class, 'edit'])->name('pages.draft.edit');
+
+// Route untuk mengupdate draft
+Route::put('draft/{id}', [App\Http\Controllers\DraftController::class, 'update'])->name('pages.draft.update');
+
+// Route untuk menghapus draft
+Route::delete('draft/{id}', [App\Http\Controllers\DraftController::class, 'destroy'])->name('pages.draft.destroy');
+
+Route::get('/profile/karya', [App\Http\Controllers\ProfileController::class, 'userKarya'])->name('pages.profile.karya');
+
+// Rute untuk profil admin
+Route::get('/profileadmin', [App\Http\Controllers\ProfileAdminController::class, 'index'])->name('pages.profileadmin.index');
+
+
 });
 
 Route::delete('/admin/user/{id}', [App\Http\Controllers\ProfileAdminController::class, 'deleteUser'])->name('admin.deleteUser')->middleware('auth');
+

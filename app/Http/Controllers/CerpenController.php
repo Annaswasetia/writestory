@@ -10,16 +10,34 @@ use Illuminate\Support\Facades\Auth;
 
 class CerpenController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Mengambil semua cerpen yang dipublikasikan dan mengurutkannya dari yang terbaru
-        $cerpen = Karya::where('category', 'cerpen')
+        // Mulai query dasar untuk cerpen yang dipublikasikan
+        $query = Karya::where('category', 'cerpen')
             ->where('is_published', true)
-            ->orderBy('created_at', 'desc') // Mengurutkan berdasarkan waktu pembuatan (terbaru di awal)
-            ->orderBy('updated_at', 'desc')
-            ->get();
+            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc');
+
+        // Cek apakah ada parameter pencarian
+        if ($request->has('search') && $request->search !== null) {
+            $search = $request->search;
+
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%') // Cari di judul
+                    ->orWhere('content', 'like', '%' . $search . '%') // Cari di konten
+                    ->orWhereHas('user', function ($q) use ($search) { // Cari di nama user
+                        $q->where('name', 'like', '%' . $search . '%');
+                    });
+            });
+        }
+
+        // Eksekusi query
+        $cerpen = $query->get();
+
+        // Kirim data ke view
         return view('pages.cerpen.index', compact('cerpen'));
     }
+
 
     public function create()
     {
@@ -29,7 +47,7 @@ class CerpenController extends Controller
     public function store(Request $request)
     {
         // Memvalidasi input untuk memastikan formatnya benar sebelum disimpan.
-        $validatedData = $request->validate([ 
+        $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
             'category' => 'required',
@@ -43,7 +61,7 @@ class CerpenController extends Controller
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'category' => $request->input('category'),
-            'is_published' => true, 
+            'is_published' => true,
             'karya_id' => $request->input('karya_id'),
         ]);
 
@@ -64,11 +82,11 @@ class CerpenController extends Controller
         $cerpen = Cerpen::findOrFail($id);
 
         // Cek apakah user adalah admin dan pemilik
-        if (Auth::check() && (Auth::user()->role !== 'admin' && Auth::user()->id !== $cerpen->user_id))  {
+        if (Auth::check() && (Auth::user()->role !== 'admin' && Auth::user()->id !== $cerpen->user_id)) {
             return redirect()->route('pages.cerpen.index')->with('error', 'Anda tidak memiliki izin untuk mengedit cerpen ini.');
         }
 
-        $karya = Karya::all(); 
+        $karya = Karya::all();
 
         return view('pages.cerpen.edit', compact('cerpen', 'karya'));
     }
@@ -78,7 +96,7 @@ class CerpenController extends Controller
         // Temukan cerpen berdasarkan ID
         $cerpen = Cerpen::findOrFail($id);
 
-        // hanya admin danpemilik yang bisa mengupdate cerpen
+        // Hanya admin dan pemilik cerpen yang bisa mengupdate cerpen
         if (Auth::check() && (Auth::user()->role !== 'admin' && Auth::user()->id !== $cerpen->user_id)) {
             return redirect()->route('pages.cerpen.index')->with('error', 'Anda tidak memiliki izin untuk mengupdate cerpen ini.');
         }
@@ -104,12 +122,16 @@ class CerpenController extends Controller
 
         if ($karya) {
             $karya->title = $cerpen->title;
-            $karya->content = $cerpen->content; 
+            $karya->content = $cerpen->content;
             $karya->save();
         }
 
-        // Redirect ke halaman daftar cerpen dengan pesan sukses
-        return redirect()->route('pages.cerpen.index')->with('success', 'Cerpen berhasil diupdate!');
+        // Redirect ke halaman daftar cerpen dengan pesan sukses atau draft berhasil diupdate
+        $message = $cerpen->is_published
+            ? 'Cerpen berhasil diupdate!'
+            : 'Draft cerpen berhasil diupdate!';
+
+        return redirect()->route('pages.cerpen.index')->with('success', $message);
     }
 
     public function destroy($id)
@@ -129,7 +151,10 @@ class CerpenController extends Controller
         // Temukan karya terkait
         $karya = Karya::find($cerpen->karya_id);
 
-        // Hapus cerpen terlebih dahulu
+        // Simpan status publikasi sebelum dihapus
+        $isPublished = $cerpen->is_published;
+
+        // Hapus cerpen
         $cerpen->delete();
 
         // Jika karya terkait tidak memiliki cerpen atau puisi lain, hapus juga karya tersebut
@@ -137,6 +162,11 @@ class CerpenController extends Controller
             $karya->delete();
         }
 
-        return redirect()->route('pages.cerpen.index')->with('success', 'Cerpen berhasil dihapus!!');
+        // Tentukan pesan berdasarkan status publikasi
+        $message = $isPublished
+            ? 'Karya cerpen yang dipublikasikan berhasil dihapus!'
+            : 'Karya cerpen yang masih draft berhasil dihapus!';
+
+        return redirect()->route('pages.cerpen.index')->with('success', $message);
     }
 }

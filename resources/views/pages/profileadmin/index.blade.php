@@ -98,11 +98,12 @@
                             <th>Penulis</th>
                             <th>Tanggal Pembuatan</th>
                             <th>Tanggal Diperbarui</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($karya as $index => $item)
+                        @forelse ($karya->where('is_published', true) as $index => $item)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $item->title }}</td>
@@ -117,6 +118,9 @@
                                     @endif
                                 </td>
                                 <td>
+                                    <span style="color: green; font-weight: bold;">Published</span>
+                                </td>
+                                <td>
                                     @if ($item->category === 'cerpen')
                                         <a href="{{ route('pages.cerpen.show', $item->id) }}"
                                             class="btn btn-primary btn-sm">Detail</a>
@@ -128,14 +132,14 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" class="text-center text-muted">Tidak ada karya yang dipublikasikan</td>
+                                <td colspan="8" class="text-center text-muted">Tidak ada karya yang dipublikasikan</td>
                             </tr>
                         @endforelse
                     </tbody>
-
                 </table>
             </div>
         </div>
+        
     </div>
 
     <script>

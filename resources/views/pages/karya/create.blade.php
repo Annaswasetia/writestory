@@ -3,9 +3,12 @@
 @section('content')
 <div class="container" style="margin-top: 150px;">
     <h1 class="text-center mb-4"
-        style="font-size: 50px; color: rgb(117, 190, 117); font-family: 'Georgia', 'Times New Roman', serif;">
-        <i class="bi bi-pencil" style="margin-right: 10px;"></i>Buat Karya Baru
-    </h1>
+    style="font-size: 50px; 
+           font-family: 'Georgia', 'Times New Roman', serif; 
+           color: rgb(49, 211, 51); 
+           text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">
+    <i class="bi bi-pencil" style="margin-right: 10px;"></i>Buat Karya Baru
+</h1>
 
     <form action="{{ route('karya.store') }}" method="POST" class="bg-light p-4 rounded shadow">
         @csrf 
@@ -70,7 +73,7 @@
         <!-- Checkbox untuk Publish Karya -->
         <div class="row mb-4">
             <div class="col">
-                <label class="form-label">Publish Karya <span class="text-danger">*</span></label>
+                <label class="form-label">Publish Karya</label>
                 <div class="form-check">
                     <input type="checkbox" name="is_published" id="is_published" value="1" class="form-check-input">
                     <label for="is_published" class="form-check-label">Publish Karya</label>
@@ -81,16 +84,19 @@
 
         <!-- Tombol Submit dan Kembali -->
         <div class="d-flex justify-content-around">
-            <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi-save-fill"
-                style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Publish</button>
-
             <a href="{{ route('karya.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg bi-back"
                 style="font-size: 20px; color: rgb(24, 46, 24); font-family: 'Georgia', 'Times New Roman', serif;">Back</a>
+
+            <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi-save-fill"
+                style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">Publish</button>
         </div>
     </form>
 
     <div class="text-center mt-3">
-        <small class="text-muted">* Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib diisi, jika tidak diisi otomatis aka kembali lagi ke halaman create.</small>
+        <small class="text-muted">
+            Semua kolom yang ditandai dengan <span class="text-danger">*</span> adalah wajib diisi. Jika tidak diisi, otomatis akan kembali lagi ke halaman create.
+        </small>
+        <p class="text-secondary mt-2">Jika Anda lupa tidak mengklik checkbox publish karya, dan saat Anda mengklik tombol publish akan langsung mengarah ke halaman draft.</p>
     </div>
 </div>
 @endsection

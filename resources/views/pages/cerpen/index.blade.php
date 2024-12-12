@@ -54,6 +54,15 @@
                 </div>
             @endif
 
+            <div class="row mb-4" style="margin-top: 10px;">
+                <form action="{{ route('pages.cerpen.index') }}" method="GET" class="d-flex w-100 justify-content-left">
+                    <input type="text" name="search" class="form-control me-2" placeholder="Cari cerpen..." 
+                        value="{{ request('search') }}" 
+                        style="border-radius: 15px; border: 1px solid #dcdcdc; max-width: 400px;">
+                    <button type="submit" class="btn btn-success" style="border-radius: 15px;">Search</button>
+                </form>
+            </div>
+
             @foreach ($cerpen as $item)
                 <!-- cerpen item -->
                 <div class="col-12 mb-4">

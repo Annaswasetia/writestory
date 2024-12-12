@@ -49,6 +49,14 @@
                 </div>
             @endif
 
+            <div class="row mb-4" style="margin-top: 10px;">
+                <form action="{{ route('pages.puisi.index') }}" method="GET" class="d-flex w-100 justify-content-left">
+                    <input type="text" name="search" class="form-control me-2" placeholder="Cari puisi..." 
+                        value="{{ request('search') }}" 
+                        style="border-radius: 15px; border: 1px solid #dcdcdc; max-width: 400px;">
+                    <button type="submit" class="btn btn-success" style="border-radius: 15px;">Search</button>
+                </form>
+            </div>
             @foreach ($puisi as $item)
                 <div class="col-12 col-md-6 mb-4">
                     <div class="card shadow-sm h-100 bg-light"

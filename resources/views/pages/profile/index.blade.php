@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 50px;">
+    <div class="container" style="margin-top: 10px;">
         @if (Auth::check())
             <div class="text-center">
                 <h1
@@ -59,6 +59,17 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+
+                        <!-- Tombol Draft Karya -->
+                        <a href="{{ route('pages.draft.index') }}" class="btn btn-secondary mt-3"
+                            style="font-weight: bold; padding: 8px 20px; border-radius: 8px; color: #fff; text-decoration: none;">
+                            <i class="bi bi-file-earmark-text"></i> Draft Karya
+                        </a>
+                        <a href="{{ route('pages.profile.karya') }}" class="btn btn-primary mt-3"
+                            style="font-weight: bold; padding: 8px 20px; border-radius: 8px; color: #fff; text-decoration: none;">
+                            <i class="bi bi-file-earmark-text"></i> AllKarya
+                        </a>
+
                     </div>
                 </div>
             </div>

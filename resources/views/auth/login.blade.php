@@ -15,24 +15,41 @@
                         <div data-mdb-input-init class="form-outline mb-4">
                             <input type="email" name="email" id="email" class="form-control form-control-lg"
                                 placeholder="E-Mail" />
-                        </div>
+                      
 
                         @error('email')
                             <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    </div>
 
-                        <div data-mdb-input-init class="form-outline mb-4">
-                            <input type="password" name="password" id="password" class="form-control form-control-lg"
+                        <div data-mdb-input-init class="form-outline mb-4 position-relative">
+                            <input type="password" name="password" id="password" class="form-control form-control-lg @error('password') is-invalid @enderror"
                                 placeholder="Password" />
-                        </div>
+                            <i class="bi bi-eye-slash position-absolute" id="togglePassword"
+                                style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
 
                         @error('password')
                             <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+
+                    </div>
+
+                        <script>
+                            const togglePassword = document.getElementById('togglePassword');
+                            const passwordField = document.getElementById('password');
+
+                            togglePassword.addEventListener('click', function(e) {
+                                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                                passwordField.type = type;
+
+                                this.classList.toggle('bi-eye');
+                                this.classList.toggle('bi-eye-slash');
+                            });
+                        </script>
 
                         <!-- Checkbox -->
                         <div class="form-check d-flex justify-content-start mb-4">

@@ -97,9 +97,11 @@
                     <h3 style="font-family: 'Georgia', 'Times New Roman', serif; color: #4fa94f;">✨ Siap untuk Membagikan
                         Karyamu?</h3>
                     <p style="font-family: 'Georgia', 'Times New Roman', serif; color: #555;">
-                        <strong>Sebelum kamu mulai menulis, perhatikanlah beberapa hal penting:</strong>
+                        <strong>Sebelum kamu mulai menulis, perhatikanlah beberapa hal berikut ini:</strong>
                         <li>Semua kolom wajib di isi.</li>
                         <li>Jika ada kolom yang belum di isi, otomatis akan kembali ke halaman create.</li>
+                        <li>Jika kamu lupa untuk mengklik checkbox publish karya, dan saat kamu mengklik tombol publish akan langsung mengarah ke halaman draft.</li>
+                        <li>Di halaman draft kamu bisa edit karya dan publish karya kamu.</li>
                         <li>Cerpen atau puisi yang kamu mau buat harus merupakan karya asli atau pemikiran sendiri.</li>
                         <li>Tidak boleh copy karya orang lain atau melakukan plagiarisme!!!</li>
                         <li>Hanya Admin yang bisa menghapus cerpen dan puisi.</li>
@@ -124,21 +126,19 @@
 
             <!-- Judul dan Deskripsi -->
             <div class="section-title" data-aos="fade-up">
-                <h2
+                <h1
                     style="text-align: center; font-size: 2.5rem; color: #87ceeb; font-family: 'Cinzel', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">
                     <span style="font-weight: bold;">Menjelajahi Dunia Visual</span>
                     <i class="bi bi-stars" style="color: #87ceeb; font-size: 3rem;"></i>
-                </h2>
+                </h1>
                 <h4 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: #555">
                     Art | Sky
                 </h4>
-                <p style="font-family: 'Arial', sans-serif; color: #777; font-size: 1rem; text-align: center;">
+                <p style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.8; max-width: 750px; margin: 0 auto; color: #6c757d;">
                     Jelajahi keindahan seni dan langit yang memukau. Langit yang selalu menyembunyikan keindahan dengan
                     rupa yang berbeda.
                     Bentala tidak mungkin bisa memeluk cakrawala, jadi karena itu, mari lihat keindahannya tanpa memiliki,
-                    mengagumi jauh lebih senang.
-                    Temukan berbagai karya yang membawa imajinasi ke dunia
-                    baru.
+                    karena mengagumi jauh lebih senang🖊️🌫️.
                 </p>
             </div>
 

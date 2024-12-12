@@ -12,15 +12,16 @@ use Illuminate\Http\Request;
 class ProfileAdminController extends Controller
 {
     public function index()
-    {
-        $karya = Karya::where('is_published', true)->with('user')->get();
+{
+    // Mengambil semua karya, baik yang dipublikasikan maupun yang draft
+    $karya = Karya::with('user')->get();
 
     // Mengambil semua pengguna yang terdaftar
     $users = User::all();  // Sesuaikan query ini jika kamu ingin mengambil pengguna tertentu saja
 
     // Kirim data karya dan pengguna ke view profileadmin.index
     return view('pages.profileadmin.index', compact('karya', 'users'));
-    }
+}
 
     public function deleteUser($id)
 {

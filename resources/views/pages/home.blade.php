@@ -49,7 +49,7 @@
                     <div class="col-lg-4 order-lg-1">
                         <span class="section-subtitle" data-aos="fade-up"
                             style="font-size: 16px; color: #98995d; letter-spacing: 1px; font-style: italic;">
-                            Welcome Karya Sastra
+                            Welcome WriteStory
                         </span>
 
                         <h1 class="mb-4" data-aos="fade-up"
@@ -133,10 +133,12 @@
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="{{ route('profile') }}" class="btn-get-started"
+                                        <a href="{{ auth()->check() ? (auth()->user()->role === 'admin' ? route('profileadmin') : route('profile')) : 'login' }}" 
+                                            class="btn-get-started" 
                                             style="background-color: #699b76; color: white; padding: 10px 20px; border-radius: 25px; transition: background-color 0.3s, transform 0.3s;">
                                             Profile
-                                        </a>
+                                         </a>
+                                         
                                     </p>
                                 </div>
                             </div>
@@ -169,7 +171,7 @@
 
             
             @if ($cerpen->count() > 0) <!-- Cerpen terbaru, memastikan data cerpen ada -->
-                <div class="container" style="margin-top: 100px;">
+                <div class="container" style="margin-top: 50px;">
                     <h3 style="font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; color: black">
                         Cerpen Terbaru
                     </h3>

@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function karya()
+    {
+        return $this->belongsTo(Karya::class, 'user_id', 'id');
+    }
 }

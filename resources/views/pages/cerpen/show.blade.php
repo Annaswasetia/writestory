@@ -45,22 +45,23 @@
         <hr style="border-top: 2px solid #919b91;">
 
         <div
-            style="font-family: 'Open Sans', sans-serif; line-height: 1.8; text-align: justify; background-color: #ffffff; padding: 15px; border-radius: 10px;">
+            style="font-family: 'Open Sans', sans-serif; line-height: 1.8; text-align: justify; background-color: #ffffff; padding: 15px; border-radius: 10px; font-size: 17px;">
             <p class="text-dark">{!! nl2br(e($cerpen->content)) !!}</p>
         </div>
 
-        <!-- Badge Status -->
-        <!-- <div class="mt-3">
+        <div class="mt-3">
             @if ($cerpen->is_published)
                 <span class="badge bg-success" style="font-size: 1rem; padding: 10px 15px;">Diterbitkan</span>
+            @else
+                <span class="badge bg-warning" style="font-size: 1rem; padding: 10px 15px;">Draft</span>
             @endif
-        </div> -->
+        </div>
 
         <hr style="border-top: 2px solid #919b91;">
 
         <div class="d-flex align-items-start mt-3">
             <!-- Button Back -->
-            <a href="{{ route('pages.cerpen.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-arrow-left mr-2"
+            <a href="{{ route('pages.cerpen.index') }}" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-arrow-left-circle mr-2"
                 style="font-size: 20px; color: rgb(23, 224, 23); font-family: 'Georgia', 'Times New Roman', serif;">
                 Back
             </a>
@@ -77,7 +78,9 @@
             <!-- Button delete -->
             @if (Auth::check() && Auth::user()->role === 'admin')
                 <form action="{{ route('cerpen.destroy', $cerpen->id) }}" method="POST"
-                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus cerpen ini?');">
+                    onsubmit="return confirm(
+              '{{ $cerpen->is_published ? 'Karya cerpen sudah dipublikasikan. Kamu yakin ingin menghapusnya?' : 'Karya cerpen masih draft. Kamu yakin ingin menghapusnya?' }}'
+                );">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm mb-3 rounded-pill shadow-lg bi bi-trash mr-2"
